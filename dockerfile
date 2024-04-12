@@ -6,3 +6,5 @@ COPY . /var/www/html
 
 # Alterar as permissões dos arquivos e diretórios
 RUN chmod -R 755 /var/www/html
+
+RUN -d -p 8080:80 --name meu_container_php meu_projeto_php
