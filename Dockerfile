@@ -1,5 +1,5 @@
 FROM phpdockerio/php:8.3-fpm
-COPY  index.php /public 
+COPY  public/index.php /public 
 WORKDIR /public
 ENTRYPOINT ["php","-S"]
 RUN apt-get update \
