@@ -9,5 +9,5 @@ services:
     - type: bind
       source: /var/run/docker.sock
       target: /var/run/docker.sock
-    command: flask run --host=0.0.0.0
+    
 
