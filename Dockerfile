@@ -2,7 +2,7 @@ FROM phpdockerio/php:8.3-fpm
 
 WORKDIR /public
 
-COPY . .
+COPY public/index.php .
 
 EXPOSE 81
 
