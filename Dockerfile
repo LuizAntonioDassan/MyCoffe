@@ -6,7 +6,7 @@ COPY . .
 
 EXPOSE 81
 
-CMD ["php", "-S", "0.0.0.0:81"]
+CMD ["php", "-S", "0.0.0.0:81", "index.php"]
 
 RUN apt-get update \
     && apt-get -y --no-install-recommends install \
