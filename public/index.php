@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
 <body>
@@ -162,8 +162,6 @@
                 <div class="modal-body">
                   <img src="imagens/categorias/salgados.jpg" class="w-100" alt="Xícara de café preto">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id? Esse.</p>
-        
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem quasi quas voluptate ratione, alias sint corrupti blanditiis odit corporis hic amet cumque. Laudantium dicta consequuntur illum aperiam dolorem iure! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde quasi quia dolorem mollitia saepe. Fugit unde architecto numquam porro, culpa consequuntur at dolore rem accusamus molestias, beatae ipsum.</p>
                 </div>
                 <div class="modal-footer mx-auto">
                   <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver produtos</button>
@@ -182,8 +180,6 @@
                 <div class="modal-body">
                   <img src="imagens/categorias/doces.jpg" class="w-100" alt="Xícara de café preto">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id? Esse.</p>
-        
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem quasi quas voluptate ratione, alias sint corrupti blanditiis odit corporis hic amet cumque. Laudantium dicta consequuntur illum aperiam dolorem iure! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde quasi quia dolorem mollitia saepe. Fugit unde architecto numquam porro, culpa consequuntur at dolore rem accusamus molestias, beatae ipsum.</p>
                 </div>
                 <div class="modal-footer mx-auto">
                   <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver produtos</button>
@@ -202,8 +198,6 @@
                 <div class="modal-body">
                   <img src="imagens/categorias/bebidas.jpg" class="w-100" alt="Xícara de café preto">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id? Esse.</p>
-        
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem quasi quas voluptate ratione, alias sint corrupti blanditiis odit corporis hic amet cumque. Laudantium dicta consequuntur illum aperiam dolorem iure! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde quasi quia dolorem mollitia saepe. Fugit unde architecto numquam porro, culpa consequuntur at dolore rem accusamus molestias, beatae ipsum.</p>
                 </div>
                 <div class="modal-footer mx-auto">
                   <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver produtos</button>
@@ -222,8 +216,6 @@
                 <div class="modal-body">
                   <img src="imagens/categorias/cafes.jpg" class="w-100" alt="Xícara de café preto">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id? Esse.</p>
-        
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem quasi quas voluptate ratione, alias sint corrupti blanditiis odit corporis hic amet cumque. Laudantium dicta consequuntur illum aperiam dolorem iure! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde quasi quia dolorem mollitia saepe. Fugit unde architecto numquam porro, culpa consequuntur at dolore rem accusamus molestias, beatae ipsum.</p>
                 </div>
                 <div class="modal-footer mx-auto">
                   <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver produtos</button>
@@ -242,8 +234,6 @@
                 <div class="modal-body">
                   <img src="imagens/categorias/artesanais.jpg" class="w-100" alt="Xícara de café preto">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id? Esse.</p>
-        
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem quasi quas voluptate ratione, alias sint corrupti blanditiis odit corporis hic amet cumque. Laudantium dicta consequuntur illum aperiam dolorem iure! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde quasi quia dolorem mollitia saepe. Fugit unde architecto numquam porro, culpa consequuntur at dolore rem accusamus molestias, beatae ipsum.</p>
                 </div>
                 <div class="modal-footer mx-auto">
                   <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver produtos</button>
@@ -262,8 +252,6 @@
                 <div class="modal-body">
                   <img src="imagens/categorias/outros.jpg" class="w-100" alt="Xícara de café preto">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id? Esse.</p>
-        
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem quasi quas voluptate ratione, alias sint corrupti blanditiis odit corporis hic amet cumque. Laudantium dicta consequuntur illum aperiam dolorem iure! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde quasi quia dolorem mollitia saepe. Fugit unde architecto numquam porro, culpa consequuntur at dolore rem accusamus molestias, beatae ipsum.</p>
                 </div>
                 <div class="modal-footer mx-auto">
                   <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver produtos</button>

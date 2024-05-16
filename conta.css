@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.main-content {
+    padding: 20px;
+    /* Adiciona um espaçamento interno */
+    max-width: 800px;
+    /* Define o tamanho máximo da div principal */
+    margin: 0 auto;
+    /* Centraliza a div na página */
+}
+
+.max-img-size {
+    max-width: 300px; /* Defina o tamanho máximo da imagem aqui */
+}
