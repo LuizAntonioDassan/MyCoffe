@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.produto-imagem{
+    max-width: 100px;
+    height: auto;
+}
+
+.preco-final-carrinho{
+    color: black;
+    font-size: 1.4em;
+    border: 1px solid rgba(129, 126, 126, 0.471);
+    padding: 10px;
+}
