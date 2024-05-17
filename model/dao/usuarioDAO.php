@@ -9,10 +9,11 @@ class UsuarioDAO {
     public function __construct($db) {
         $this->conn = $db;
     }
-    public function create(Usuario $usuario) {
-        $query = "INSERT INTO {$this->table_name} (nome, email, senha) VALUES ($1, $2, $3)";
-        $result = pg_query_params($this->conn, $query, array($usuario->nome, $usuario->email, $usuario->senha));
 
+    public function create(Usuario $usuario) {
+        $query = "INSERT INTO {$this->table_name} (id, nome, email, senha) VALUES ($1, $2, $3, $4)";
+        $result = pg_query_params($this->conn, $query, array($usuario->id, $usuario->nome, $usuario->email, $usuario->senha));
+        
         if ($result) {
             return true;
         } else {
@@ -20,42 +21,57 @@ class UsuarioDAO {
         }
     }
 
-
-    public function read() {
+    public function readAll() {
         $query = "SELECT * FROM {$this->table_name}";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
+        $result = pg_query($this->conn, $query);
 
-        return $stmt;
+        if ($result) {
+            $usuarios = [];
+            while ($row = pg_fetch_assoc($result)) {
+                $usuarios[] = new Usuario($row['id'], $row['nome'], $row['email'], $row['senha']);
+            }
+            return $usuarios;
+        } else {
+            throw new Exception("Erro ao buscar usuários: " . pg_last_error($this->conn));
+        }
+    }
+
+    public function readById($id) {
+        $query = "SELECT * FROM {$this->table_name} WHERE id = $1";
+        $result = pg_query_params($this->conn, $query, array($id));
+
+        if ($result) {
+            $row = pg_fetch_assoc($result);
+            if ($row) {
+                return new Usuario($row['id'], $row['nome'], $row['email'], $row['senha']);
+            } else {
+                return null;
+            }
+        } else {
+            throw new Exception("Erro ao buscar usuário: " . pg_last_error($this->conn));
+        }
     }
 
     public function update(Usuario $usuario) {
-        $query = "UPDATE {$this->table_name} SET senha = :senha, nome = :nome, foto = :foto WHERE email = :email";
+        $query = "UPDATE {$this->table_name} SET nome = $1, email = $2, senha = $3 WHERE id = $4";
+        $result = pg_query_params($this->conn, $query, array($usuario->nome, $usuario->email, $usuario->senha, $usuario->id));
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':email', $usuario->email);
-        $stmt->bindParam(':senha', $usuario->senha);
-        $stmt->bindParam(':nome', $usuario->nome);
-        $stmt->bindParam(':foto', $usuario->foto);
-
-        if ($stmt->execute()) {
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao atualizar usuário: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
 
-    public function delete($email) {
-        $query = "DELETE FROM {$this->table_name} WHERE email = :email";
+    public function delete($id) {
+        $query = "DELETE FROM {$this->table_name} WHERE id = $1";
+        $result = pg_query_params($this->conn, $query, array($id));
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':email', $email);
-
-        if ($stmt->execute()) {
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao deletar usuário: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
 }
 ?>

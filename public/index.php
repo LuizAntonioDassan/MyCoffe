@@ -1,3 +1,11 @@
+<?php
+
+  
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,16 +30,16 @@
                     <a class="nav-link active" aria-current="page" href="#">Principal</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/view/produtos.html">Produtos</a>
+                    <a class="nav-link" href="produtos.php">Produtos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/view/carrinho.html">Carrinho</a>
+                    <a class="nav-link" href="carrinho.php">Carrinho</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Minha conta</a>
+                    <a class="nav-link" href="conta.php">Minha conta</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Entrar</a>
+                    <a class="nav-link" href="entrar.php">Entrar</a>
                   </li>
                 </ul>
               </div>
@@ -41,6 +49,7 @@
 
     <main>
         <!-- TEXTO À ESQUERDA E FORMULÁRIO DE CADASTRO À DIREITA -->
+
         <section class="container mt-4">
             <div class="row">
                 <!-- Texto à esquerda -->
@@ -75,7 +84,7 @@
             <div class="row">
                 <!-- Imagem à esquerda -->
                 <div class="col-md-6">
-                    <img src='teste.jpg' class="img-fluid" alt="Imagem">
+                    <img src='../imagens/teste.jpg' class="img-fluid" alt="Imagem">
                 </div>
                 <!-- Texto à direita -->
                 <div class="col-md-6 d-flex align-items-center">
@@ -483,7 +492,7 @@
     <script>
         function submitForm() {
             const form = document.getElementById('signupForm');
-            form.action = '../controller/usuariosController.php';  // Defina a URL do controlador
+            form.action = 'usuariosController.php';  // Defina a URL do controlador
             if(form.action != null){
               alert(form.action);
             }else{

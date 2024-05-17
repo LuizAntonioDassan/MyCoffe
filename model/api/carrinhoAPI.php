@@ -1,11 +1,13 @@
 <?php
 class Carrinho {
     public $id;
-    public $cliente_RG;
+    public $codigoProduto;
+    public $precoFinal;
 
-    public function __construct($cliente_RG, $id = null) {
+    public function __construct($id, $codigoProduto,$precoFinal) {
         $this->id = $id;
-        $this->cliente_RG = $cliente_RG;
+        $this->codigoProduto = $codigoProduto;
+        $this->precoFinal = $precoFinal;
     }
 }
 ?>

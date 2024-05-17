@@ -4,7 +4,7 @@ class Cargo {
     public $nome;
     public $permissao;
 
-    public function __construct($nome, $permissao, $id = null) {
+    public function __construct($id, $nome, $permissao) {
         $this->id = $id;
         $this->nome = $nome;
         $this->permissao = $permissao;

@@ -3,13 +3,15 @@ class Assinatura {
     public $id;
     public $descricao;
     public $preco;
-    public $duracao;
+    public $precoDesconto;
+    public $ativo;
 
-    public function __construct($descricao, $preco, $duracao, $id = null) {
+    public function __construct($ativo, $id, $descricao, $preco, $precoDesconto) {
+        $this->ativo = $ativo;
         $this->id = $id;
         $this->descricao = $descricao;
         $this->preco = $preco;
-        $this->duracao = $duracao;
+        $this->precoDesconto = $precoDesconto;
     }
 }
 ?>

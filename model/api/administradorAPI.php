@@ -1,9 +1,11 @@
 <?php
 class Administrador {
-    public $email;
+    public $cargo;
+    public $id;
 
-    public function __construct($email) {
-        $this->email = $email;
+    public function __construct($id,$cargo) {
+        $this->id = $id;
+        $this->cargo = $cargo;
     }
 }
 ?>

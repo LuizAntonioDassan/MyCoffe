@@ -6,7 +6,7 @@ class Cliente {
     public $Dt_Nascimento;
     public $Endereco;
 
-    public function __construct($RG, $CPF, $Dt_Nascimento, $Endereco, $id = null) {
+    public function __construct($Dt_Nascimento, $RG, $CPF, $Endereco, $id) {
         $this->id = $id;
         $this->RG = $RG;
         $this->CPF = $CPF;

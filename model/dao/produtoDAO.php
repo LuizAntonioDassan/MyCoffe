@@ -4,65 +4,124 @@ include_once './model/api/produtoAPI.php';
 
 class ProdutoDAO {
     private $conn;
-    private $table_name = 'Produto';
+    private $table_name = 'produto';
 
     public function __construct($db) {
         $this->conn = $db;
     }
 
+    // Método para criar um novo produto
     public function create(Produto $produto) {
-        $query = "INSERT INTO {$this->table_name} (codigo_barras, descricao, preco, quantidade, marca) VALUES (:codigo_barras, :descricao, :preco, :quantidade, :marca)";
-
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':codigo_barras', $produto->codigo_barras);
-        $stmt->bindParam(':descricao', $produto->descricao);
-        $stmt->bindParam(':preco', $produto->preco);
-        $stmt->bindParam(':quantidade', $produto->quantidade);
-        $stmt->bindParam(':marca', $produto->marca);
-
-        if ($stmt->execute()) {
+        $query = "INSERT INTO {$this->table_name} (nome, preco, precodesconto, codigointerno, codigobarras, marca, quantidade, atividade, nomecategoria) 
+                  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
+        $result = pg_query_params($this->conn, $query, array(
+            $produto->nome,
+            $produto->preco,
+            $produto->precodesconto,
+            $produto->codigointerno,
+            $produto->codigobarras,
+            $produto->marca,
+            $produto->quantidade,
+            $produto->atividade,
+            $produto->categoria
+        ));
+        
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao inserir produto: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
 
-    public function read() {
+    // Método para buscar todos os produtos
+    public function readAll() {
         $query = "SELECT * FROM {$this->table_name}";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
+        $result = pg_query($this->conn, $query);
 
-        return $stmt;
+        if ($result) {
+            $produtos = [];
+            while ($row = pg_fetch_assoc($result)) {
+                $produtos[] = new Produto(
+                    $row['nome'],
+                    $row['preco'],
+                    $row['precodesconto'],
+                    $row['codigointerno'],
+                    $row['codigobarras'],
+                    $row['marca'],
+                    $row['quantidade'],
+                    $row['atividade'],
+                    $row['nomecategoria']
+                );
+            }
+            return $produtos;
+        } else {
+            throw new Exception("Erro ao buscar produtos: " . pg_last_error($this->conn));
+        }
     }
 
-    public function update(Produto $produto) {
-        $query = "UPDATE {$this->table_name} SET descricao = :descricao, preco = :preco, quantidade = :quantidade, marca = :marca WHERE codigo_barras = :codigo_barras";
+    // Método para buscar um produto por ID (ou outro campo único)
+    public function readById($id) {
+        $query = "SELECT * FROM {$this->table_name} WHERE codigointerno = $1";
+        $result = pg_query_params($this->conn, $query, array($id));
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':codigo_barras', $produto->codigo_barras);
-        $stmt->bindParam(':descricao', $produto->descricao);
-        $stmt->bindParam(':preco', $produto->preco);
-        $stmt->bindParam(':quantidade', $produto->quantidade);
-        $stmt->bindParam(':marca', $produto->marca);
-
-        if ($stmt->execute()) {
-            return true;
+        if ($result) {
+            $row = pg_fetch_assoc($result);
+            if ($row) {
+                return new Produto(
+                    $row['nome'],
+                    $row['preco'],
+                    $row['precodesconto'],
+                    $row['codigointerno'],
+                    $row['codigobarras'],
+                    $row['marca'],
+                    $row['quantidade'],
+                    $row['atividade'],
+                    $row['nomecategoria']
+                );
+            } else {
+                return null;
+            }
+        } else {
+            throw new Exception("Erro ao buscar produto: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
 
-    public function delete($codigo_barras) {
-        $query = "DELETE FROM {$this->table_name} WHERE codigo_barras = :codigo_barras";
+    // Método para atualizar um produto
+    public function update(Produto $produto, $id) {
+        $query = "UPDATE {$this->table_name} SET 
+                    nome = $1, preco = $2, precodesconto = $3, codigointerno = $4, codigobarras = $5, 
+                    marca = $6, quantidade = $7, atividade = $8, nomecategoria = $9 
+                  WHERE codigointerno = $10";
+        $result = pg_query_params($this->conn, $query, array(
+            $produto->nome,
+            $produto->preco,
+            $produto->precodesconto,
+            $produto->codigointerno,
+            $produto->codigobarras,
+            $produto->marca,
+            $produto->quantidade,
+            $produto->atividade,
+            $produto->categoria,
+            $id
+        ));
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':codigo_barras', $codigo_barras);
-
-        if ($stmt->execute()) {
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao atualizar produto: " . pg_last_error($this->conn));
         }
+    }
 
-        return false;
+    // Método para deletar um produto
+    public function delete($id) {
+        $query = "DELETE FROM {$this->table_name} WHERE codigointerno = $1";
+        $result = pg_query_params($this->conn, $query, array($id));
+
+        if ($result) {
+            return true;
+        } else {
+            throw new Exception("Erro ao deletar produto: " . pg_last_error($this->conn));
+        }
     }
 }
 ?>

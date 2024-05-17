@@ -1,65 +1,77 @@
 <?php
 include_once './model/conn/Database.php';
-include_once './model/dao/assinaturaAPI.php';
+include_once './model/api/assinaturaAPI.php';
 
 class AssinaturaDAO {
     private $conn;
-    private $table_name = 'Assinatura';
+    private $table_name = 'assinatura';
 
     public function __construct($db) {
         $this->conn = $db;
     }
 
     public function create(Assinatura $assinatura) {
-        $query = "INSERT INTO {$this->table_name} (descricao, preco, duracao) VALUES (:descricao, :preco, :duracao)";
-
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':descricao', $assinatura->descricao);
-        $stmt->bindParam(':preco', $assinatura->preco);
-        $stmt->bindParam(':duracao', $assinatura->duracao);
-
-        if ($stmt->execute()) {
+        $query = "INSERT INTO {$this->table_name} (atividade, preco, precodesconto, imagens, descricao, codigointerno) VALUES ($1, $2, $3, $4, $5, $6)";
+        $result = pg_query_params($this->conn, $query, array($assinatura->ativo, $assinatura->preco, $assinatura->precoDesconto, null, $assinatura->descricao, $assinatura->id));
+        
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao inserir assinatura: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
 
-    public function read() {
+    public function readAll() {
         $query = "SELECT * FROM {$this->table_name}";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
+        $result = pg_query($this->conn, $query);
 
-        return $stmt;
+        if ($result) {
+            $assinaturas = [];
+            while ($row = pg_fetch_assoc($result)) {
+                $assinaturas[] = new Assinatura($row['id'], $row['preco'], $row['precodeconto'], $row['imagens'], $row['descricao'], $row['codigointerno']);
+            }
+            return $assinaturas;
+        } else {
+            throw new Exception("Erro ao buscar assinaturas: " . pg_last_error($this->conn));
+        }
+    }
+
+    public function readById($id) {
+        $query = "SELECT * FROM {$this->table_name} WHERE id = $1";
+        $result = pg_query_params($this->conn, $query, array($id));
+
+        if ($result) {
+            $row = pg_fetch_assoc($result);
+            if ($row) {
+                return new Assinatura($row['id'], $row['preco'], $row['precodeconto'], $row['imagens'], $row['descricao'], $row['codigointerno']);
+            } else {
+                return null;
+            }
+        } else {
+            throw new Exception("Erro ao buscar assinatura: " . pg_last_error($this->conn));
+        }
     }
 
     public function update(Assinatura $assinatura) {
-        $query = "UPDATE {$this->table_name} SET descricao = :descricao, preco = :preco, duracao = :duracao WHERE id = :id";
+        $query = "UPDATE {$this->table_name} SET atividade = $1, preco = $2, precodesconto = $3 WHERE condigointerno = $4";
+        $result = pg_query_params($this->conn, $query, array($assinatura->ativo, $assinatura->preco, $assinatura->precoDesconto, $assinatura->id));
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':id', $assinatura->id);
-        $stmt->bindParam(':descricao', $assinatura->descricao);
-        $stmt->bindParam(':preco', $assinatura->preco);
-        $stmt->bindParam(':duracao', $assinatura->duracao);
-
-        if ($stmt->execute()) {
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao atualizar assinatura: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
 
     public function delete($id) {
-        $query = "DELETE FROM {$this->table_name} WHERE id = :id";
+        $query = "DELETE FROM {$this->table_name} WHERE codigointerno = $1";
+        $result = pg_query_params($this->conn, $query, array($id));
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':id', $id);
-
-        if ($stmt->execute()) {
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao deletar assinatura: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
 }
 ?>
