@@ -12,3 +12,15 @@
 .max-img-size {
     max-width: 300px; /* Defina o tamanho máximo da imagem aqui */
 }
+
+main .btn{
+    background-color: chocolate;
+    color: white;
+    width: 300px;
+}
+
+main .btn:hover{
+    background-color: chocolate;
+    color: white;
+    font-size: 1.2em;
+}
