@@ -1,6 +1,6 @@
 <?php
-include_once 'Database.php';
-include_once 'Administrador.php';
+include_once './model/conn/Database.php';
+include_once './model/dao/administradorAPI.php';
 
 class AdministradorDAO {
     private $conn;

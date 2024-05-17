@@ -1,30 +1,25 @@
 <?php
-include_once 'Database.php';
-include_once 'Usuario.php';
+include_once './model/conn/Database.php';
+include_once './model/api/usuarioAPI.php';
 
 class UsuarioDAO {
     private $conn;
-    private $table_name = 'Usuario';
+    private $table_name = 'usuarios';
 
     public function __construct($db) {
         $this->conn = $db;
     }
-
     public function create(Usuario $usuario) {
-        $query = "INSERT INTO {$this->table_name} (email, senha, nome, foto) VALUES (:email, :senha, :nome, :foto)";
+        $query = "INSERT INTO {$this->table_name} (nome, email, senha) VALUES ($1, $2, $3)";
+        $result = pg_query_params($this->conn, $query, array($usuario->nome, $usuario->email, $usuario->senha));
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':email', $usuario->email);
-        $stmt->bindParam(':senha', $usuario->senha);
-        $stmt->bindParam(':nome', $usuario->nome);
-        $stmt->bindParam(':foto', $usuario->foto);
-
-        if ($stmt->execute()) {
+        if ($result) {
             return true;
+        } else {
+            throw new Exception("Erro ao inserir usuário: " . pg_last_error($this->conn));
         }
-
-        return false;
     }
+
 
     public function read() {
         $query = "SELECT * FROM {$this->table_name}";

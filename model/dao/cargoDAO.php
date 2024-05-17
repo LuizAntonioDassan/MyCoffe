@@ -1,6 +1,6 @@
 <?php
-include_once 'Database.php';
-include_once 'Cargo.php';
+include_once './model/conn/Database.php';
+include_once './model/api/cargoAPI.php';
 
 class CargoDAO {
     private $conn;

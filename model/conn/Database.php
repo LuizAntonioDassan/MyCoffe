@@ -1,22 +1,25 @@
 <?php
-// Extrair informações da URL
-$url = parse_url(getenv("postgres://luiz:CIePNJCXHtMFLXtdscz6Suxh5kzUdDBA@dpg-coc7ms8l5elc739okugg-a.oregon-postgres.render.com/mycoffe"));
+class Database {
+    private $host = "dpg-coc7ms8l5elc739okugg-a.oregon-postgres.render.com";
+    private $port = "5432";
+    private $username = "luiz";
+    private $password = "CIePNJCXHtMFLXtdscz6Suxh5kzUdDBA";
+    private $database = "mycoffe";
+    private $conn = null;
 
-$host = "dpg-coc7ms8l5elc739okugg-a.oregon-postgres.render.com";
-$port = "5432";
-$username = "luiz";
-$password = "CIePNJCXHtMFLXtdscz6Suxh5kzUdDBA";
-$database = "mycoffe";
+    public function getConnection() {
+        try {
+            $conn_string = "host={$this->host} port={$this->port} dbname={$this->database} user={$this->username} password={$this->password}";
+            $this->conn = pg_connect($conn_string);
 
-// Montar a string de conexão
-$conn_string = "host=$host port=$port dbname=$database user=$username password=$password";
+            if (!$this->conn) {
+                throw new Exception("Falha na conexão!");
+            }
+        } catch (Exception $e) {
+            echo "Erro: " . $e->getMessage();
+        }
 
-// Estabelecer a conexão
-$conn = pg_connect($conn_string);
-
-// Verificar se a conexão foi bem-sucedida
-if ($conn) {
-    //echo "Conexão bem-sucedida!";
-} else {
-    echo "Falha na conexão!\n";
+        return $this->conn;
+    }
 }
+?>

@@ -1,6 +1,6 @@
 <?php
-include_once 'Database.php';
-include_once 'Categoria.php';
+include_once './model/conn/Database.php';
+include_once './model/api/categoriaAPI.php';
 
 class CategoriaDAO {
     private $conn;

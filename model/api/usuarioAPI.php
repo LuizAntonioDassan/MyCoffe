@@ -5,11 +5,11 @@ class Usuario {
     public $nome;
     public $foto;
 
-    public function __construct($email, $senha, $nome, $foto) {
+    public function __construct($email, $senha, $nome, ) {
         $this->email = $email;
         $this->senha = $senha;
         $this->nome = $nome;
-        $this->foto = $foto;
+        
     }
 }
 ?>

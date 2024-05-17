@@ -1,6 +1,6 @@
 <?php
-include_once 'Database.php';
-include_once 'Carrinho.php';
+include_once './model/conn/Database.php';
+include_once './model/api/carrinho.php';
 
 class CarrinhoDAO {
     private $conn;

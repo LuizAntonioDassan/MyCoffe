@@ -1,6 +1,6 @@
 <?php
-include_once 'Database.php';
-include_once 'Produto.php';
+include_once './model/conn/Database.php';
+include_once './model/api/produtoAPI.php';
 
 class ProdutoDAO {
     private $conn;

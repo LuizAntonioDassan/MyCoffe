@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>MyCoffe</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
 <body>
@@ -19,13 +19,13 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Principal</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
+                    <a class="nav-link" href="/view/produtos.html">Produtos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Carrinho</a>
+                    <a class="nav-link" href="/view/carrinho.html">Carrinho</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Minha conta</a>
@@ -50,21 +50,21 @@
                 <!-- Formulário à direita -->
                 <div class="col-md-6 d-flex align-items-center row">
                     <h2 class="text-center">Crie sua conta</h2>
-                    <form>
+                    <form method="POST" id="signupForm">
                         <!-- Seu formulário aqui -->
                         <div class="form-group">
                             <label for="nome">Nome:</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha:</label>
                             <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
                         </div>
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary"  onclick="submitForm()">Cadastrar</button>
                     </form>
                 </div>
             </div>
@@ -75,7 +75,7 @@
             <div class="row">
                 <!-- Imagem à esquerda -->
                 <div class="col-md-6">
-                    <img src="imagens/teste.jpg" class="img-fluid" alt="Imagem">
+                    <img src='teste.jpg' class="img-fluid" alt="Imagem">
                 </div>
                 <!-- Texto à direita -->
                 <div class="col-md-6 d-flex align-items-center">
@@ -478,6 +478,21 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function submitForm() {
+            const form = document.getElementById('signupForm');
+            form.action = '../controller/usuariosController.php';  // Defina a URL do controlador
+            if(form.action != null){
+              alert(form.action);
+            }else{
+              alert("ta errado");
+            }
+            form.submit();  // Envie o formulário
+            
+            
+        }
     </script>
 </body>
 </html>

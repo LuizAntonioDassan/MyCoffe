@@ -1,6 +1,6 @@
 <?php
-include_once 'Database.php';
-include_once 'Assinatura.php';
+include_once './model/conn/Database.php';
+include_once './model/dao/assinaturaAPI.php';
 
 class AssinaturaDAO {
     private $conn;

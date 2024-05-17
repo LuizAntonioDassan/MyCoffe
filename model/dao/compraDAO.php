@@ -1,6 +1,6 @@
 <?php
-include_once 'Database.php';
-include_once 'Compra.php';
+include_once './model/conn/Database.php';
+include_once './model/api/compraAPI.php';
 
 class CompraDAO {
     private $conn;
