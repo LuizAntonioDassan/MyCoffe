@@ -1,2 +1,22 @@
 @charset "UTF-8";
 
+.btn-gourmet , .btn-gourmet:hover , .header-gourmet{
+    background-color: var(--cor5);
+    color: var(--cor1);
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.btn-premium , .btn-premium:hover , .header-premium{
+    background-color: var(--cor2);
+    color: var(--cor6);
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.btn-tradicional , .btn-tradicional:hover , .header-tradicional{
+    background-color: var(--cor4);
+    color: var(--cor6);
+    font-size: 1.5em;
+    font-weight: 500;
+}
