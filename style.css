@@ -1,7 +1,21 @@
 @charset "UTF-8";
 
-footer{
-    background-color: chocolate;
-    color: white;
-    margin-top: 20px;
+:root{
+    /* CORES */
+    --cor1:#EBF1F2;
+    --cor2:#D98A29;
+    --cor3: #8C5230;
+    --cor4: #BF8563;
+    --cor5: #401201;
+    --cor6: #000000;
+    /* FONTES */
+    --fonte1:'Jost', sans-serif;
 }
+
+@font-face {
+    font-family: 'Jost';
+    src: url(fontes/Jost-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
