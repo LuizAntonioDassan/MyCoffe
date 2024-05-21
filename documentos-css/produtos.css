@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.botao-comprar-produtos{
+    background-color: var(--cor5);
+    color: var(--cor1);
+    font-weight: 600;
+}
+
+.teste{
+    margin: 0px;
+}
