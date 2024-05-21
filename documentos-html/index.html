@@ -46,253 +46,143 @@
   </header>
 
   <main>
-    <!-- TEXTO À ESQUERDA E FORMULÁRIO DE CADASTRO À DIREITA -->
-    <section class="container mt-4">
-      <div class="row">
-        <!-- Texto à esquerda -->
-        <div class="col-md-6 d-flex text-center align-items-center p-5">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod ante eu ipsum sodales, eu rutrum urna
-            rutrum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab accusamus corrupti unde debitis
-            eligendi! Odit incidunt earum optio maxime distinctio itaque vitae, doloribus maiores ipsam! Delectus
-            officia voluptatibus vitae asperiores.</p>
+    <!-- FORMULÁRIO -->
+    <section class="container my-4">
+      <div class="row d-flex align-items-center">
+        <div class="col-md-6">
+          <h2>Bem-vindo ao nosso site!</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet at, reprehenderit repellat voluptatum sunt
+            distinctio. Ipsa ullam fugit quisquam ex adipisci tenetur eveniet vitae consequatur velit, delectus quis
+            eaque earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nulla mollitia ea iusto fugiat
+            voluptatibus, cumque id necessitatibus quis consequuntur magnam? Vitae quisquam ducimus reprehenderit, ullam
+            quod adipisci. Deserunt, maiores?
+          </p>
         </div>
-        <!-- Formulário à direita -->
-        <div class="col-md-6 d-flex align-items-center row">
-          <h2 class="text-center">Crie sua conta</h2>
+        <div class="col-md-6">
+          <h2>Cadastre-se</h2>
           <form>
-            <!-- Seu formulário aqui -->
             <div class="form-group">
-              <label for="nome">Nome:</label>
-              <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+              <label for="name">Nome</label>
+              <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
             </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+            <div class="form-group mt-3">
+              <label for="email">E-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
             </div>
-            <div class="form-group">
-              <label for="senha">Senha:</label>
-              <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+            <div class="form-group mt-3">
+              <label for="password">Senha</label>
+              <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
             </div>
-            <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+            <button type="submit" class="btn botao-cadastar-home">Cadastrar</button>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- IMAGEM À ESQUERDA E TEXTO À DIREITA (SOBREA NÓS) -->
-    <section class="container mt-4">
-      <div class="row">
-        <!-- Imagem à esquerda -->
+    <hr>
+
+    <!-- SOBRE NÓS -->
+    <section class="container my-4">
+      <div class="row d-flex align-items-center">
         <div class="col-md-6">
-          <img src="../imagens/pagina-principal/imagem-home-1.jpg" class="img-fluid" alt="Imagem">
+          <img src="../imagens/pagina-principal/imagem-home-1.jpg" class="img-fluid">
         </div>
-        <!-- Texto à direita -->
-        <div class="col-md-6 d-flex align-items-center">
-          <div>
-            <h2>Sobre nós</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod ante eu ipsum sodales, eu rutrum
-              urna rutrum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere placeat, rerum obcaecati
-              accusamus eveniet nemo in aut pariatur nobis? Accusantium in laborum quas ratione tempore voluptatem!
-              Assumenda voluptates delectus dolores?</p>
-          </div>
+        <div class="col-md-6">
+          <h2 class="mt-3">Sobre nós</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eveniet totam qui esse, dolorum quisquam
+            repellendus sit doloribus magni nam aut cum. Distinctio quibusdam nisi porro consequuntur suscipit culpa
+            deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perspiciatis corporis quia fugiat.
+            Numquam unde reiciendis dolore molestiae error inventore ratione mollitia dicta quasi dignissimos, labore
+            aut, cum atque quia?
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- CATEGORIA DOS PRODUTOS -->
-    <section class="py-5">
+    <hr>
 
-      <h2 class="fw-bold text-center pb-1">Nossos produtos</h2>
-
-      <div class="row mx-5 nossosProdutos">
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 mx-auto btn" data-bs-toggle="modal" data-bs-target="#modal-1" style="width: 18rem;">
-            <img src="../imagens/categorias/salgados.jpg" class="card-img-top">
-            <div class="card-body">
-              <h3 class="card-text text-center fw-bold">Salgados</h3>
-            </div>
-          </div>
+    <!-- CATEGORIAS -->
+    <section class="container my-4">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center mb-4">Nossos Produtos</h2>
         </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 mx-auto btn" data-bs-toggle="modal" data-bs-target="#modal-2" style="width: 18rem;">
-            <img src="../imagens/categorias/doces.jpg" class="card-img-top">
-            <div class="card-body">
-              <h3 class="card-text fw-bold text-center">Doces</h3>
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card h-100">
+              <img src="../imagens/categorias/salgados.jpg" class="card-img-top" alt="Imagem do card 1">
+              <div class="card-body">
+                <h3 class="card-title">Salgados</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 mx-auto btn" data-bs-toggle="modal" data-bs-target="#modal-3" style="width: 18rem;">
-            <img src="../imagens/categorias/bebidas.jpg" class="card-img-top">
-            <div class="card-body">
-              <h3 class="card-text text-center fw-bold text-nowrap">Bebidas</h3>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card h-100">
+              <img src="../imagens/categorias/doces.jpg" class="card-img-top" alt="Imagem do card 2">
+              <div class="card-body">
+                <h3 class="card-title">Doces</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 mx-auto btn" data-bs-toggle="modal" data-bs-target="#modal-4" style="width: 18rem;">
-            <img src="../imagens/categorias/artesanais.jpg" class="card-img-top">
-            <div class="card-body">
-              <h3 class="card-text text-center fw-bold">Artesanais</h3>
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card h-100">
+              <img src="../imagens/categorias/bebidas.jpg" class="card-img-top" alt="Imagem do card 3">
+              <div class="card-body">
+                <h3 class="card-title">Bebidas</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 mx-auto btn" data-bs-toggle="modal" data-bs-target="#modal-5" style="width: 18rem;">
-            <img src="../imagens/categorias/cafes.jpg" class="card-img-top">
-            <div class="card-body">
-              <h3 class="card-text text-center fw-bold">Cafés</h3>
+        <!-- Card 4 -->
+        <div class="col-md-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card h-100">
+              <img src="../imagens/categorias/artesanais.jpg" class="card-img-top" alt="Imagem do card 4">
+              <div class="card-body">
+                <h3 class="card-title">Produtos artesanais</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 mx-auto btn" data-bs-toggle="modal" data-bs-target="#modal-6" style="width: 18rem;">
-            <img src="../imagens/categorias/diversos.jpg" class="card-img-top">
-            <div class="card-body">
-              <h3 class="card-text text-center fw-bold">Diversos</h3>
+        <!-- Card 5 -->
+        <div class="col-md-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card h-100">
+              <img src="../imagens/categorias/cafes.jpg" class="card-img-top" alt="Imagem do card 5">
+              <div class="card-body">
+                <h3 class="card-title">Cafés</h3>
+              </div>
             </div>
-          </div>
+          </a>
+        </div>
+        <!-- Card 6 -->
+        <div class="col-md-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card h-100">
+              <img src="../imagens/categorias/diversos.jpg" class="card-img-top" alt="Imagem do card 6">
+              <div class="card-body">
+                <h3 class="card-title">Produtos diversos</h3>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
-
     </section>
 
-    <!-- MODAIS (ABREM QUANDO CLICA NA CATEGORIA) -->
-    <div class="modal fade " id="modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Categoria 1</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="imagens/categorias/salgados.jpg" class="w-100" alt="Xícara de café preto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias
-              officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id?
-              Esse.</p>
-          </div>
-          <div class="modal-footer mx-auto">
-            <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver
-              produtos</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade " id="modal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Categoria 2</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="imagens/categorias/doces.jpg" class="w-100" alt="Xícara de café preto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias
-              officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id?
-              Esse.</p>
-          </div>
-          <div class="modal-footer mx-auto">
-            <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver
-              produtos</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade " id="modal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Categoria 3</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="imagens/categorias/bebidas.jpg" class="w-100" alt="Xícara de café preto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias
-              officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id?
-              Esse.</p>
-          </div>
-          <div class="modal-footer mx-auto">
-            <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver
-              produtos</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade " id="modal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Categoria 4</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="imagens/categorias/cafes.jpg" class="w-100" alt="Xícara de café preto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias
-              officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id?
-              Esse.</p>
-          </div>
-          <div class="modal-footer mx-auto">
-            <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver
-              produtos</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade " id="modal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Categoria 5</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="imagens/categorias/artesanais.jpg" class="w-100" alt="Xícara de café preto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias
-              officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id?
-              Esse.</p>
-          </div>
-          <div class="modal-footer mx-auto">
-            <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver
-              produtos</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade " id="modal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Categoria 6</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="imagens/categorias/outros.jpg" class="w-100" alt="Xícara de café preto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor doloribus ullam, doloremque alias
-              officia quo modi consectetur repellat consequatur qui nam vel soluta saepe assumenda reiciendis nemo id?
-              Esse.</p>
-          </div>
-          <div class="modal-footer mx-auto">
-            <button type="button" class="btn btn-secondary botao-padrao border-0" data-bs-dismiss="modal">Ver
-              produtos</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <hr>
 
     <!-- PLANOS -->
-    <section class="container py-5">
-      <h1 class="text-center">Conheça nossos planos</h1>
+    <section class="container my-4">
+      <h2 class="text-center mb-4">Conheça nossos planos</h2>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 
         <div class="col mb-4">

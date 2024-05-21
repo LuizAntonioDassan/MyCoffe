@@ -20,3 +20,19 @@
     font-size: 1.5em;
     font-weight: 500;
 }
+
+.botao-cadastar-home{
+    background-color: var(--cor5);
+    color: var(--cor1);
+    font-size: 1.4em;
+    font-weight: 400;
+
+    margin-top: 15px;
+    width: 100%;
+}
+
+.card-title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem; /* Aumente o valor conforme necessário */
+}
