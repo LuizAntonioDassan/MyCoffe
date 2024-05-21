@@ -36,18 +36,3 @@ input[type="date"]:focus,
 }
 
 /* EDITAR DEPOIS ------------------------- */
-
-input[type="radio"]:checked::before {
-    background-color: red;
-    /* Azul */
-    border-color: red;
-    /* Azul */
-}
-
-/* Cor dos checkboxes quando selecionados */
-input[type="checkbox"]:checked::before {
-    background-color: red;
-    /* Azul */
-    border-color: red;
-    /* Azul */
-}
