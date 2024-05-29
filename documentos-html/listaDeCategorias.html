@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de produtos</title>
+    <title>Lista de categorias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
@@ -75,69 +75,66 @@
         <!-- Lista de produtos -->
         <!-- Lista de produtos -->
         <section class="row">
-            <!-- Card de exemplo de produto -->
+            <!-- Card de exemplo de categoria -->
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card">
-                    <img src="../imagens/doces/beijinho.jpg" class="card-img-top img-fluid product-image"
-                        alt="Imagem do Produto">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do Produto</h5>
-                        <p class="card-text">
-                            <strong>Código de Barras:</strong> 1234567890<br>
-                            <strong>Quantidade:</strong> 50<br>
-                            <strong>Preço:</strong> R$ 99,99<br>
-                            <strong>Descrição:</strong> Esta é uma descrição do produto.
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Excluir</button>
-                        </div>
-                    </div>
+              <div class="card">
+                <img src="../imagens/categorias/salgados.jpg" class="card-img-top img-fluid category-image" alt="Imagem da Categoria">
+                <div class="card-body">
+                  <h5 class="card-title">Nome da Categoria</h5>
+                  <p class="card-text">
+                    <strong>Descrição:</strong> Esta é uma descrição da categoria.
+                  </p>
+                  <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary">Editar</button>
+                    <button class="btn btn-danger">Excluir</button>
+                  </div>
                 </div>
+              </div>
+            </div>
+          
+            <!-- Outro card de exemplo de categoria -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div class="card">
+                <img src="../imagens/categorias/doces.jpg" class="card-img-top img-fluid category-image" alt="Imagem da Categoria">
+                <div class="card-body">
+                  <h5 class="card-title">Nome da Categoria 2</h5>
+                  <p class="card-text">
+                    <strong>Descrição:</strong> Esta é outra descrição da categoria.
+                  </p>
+                  <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary">Editar</button>
+                    <button class="btn btn-danger">Excluir</button>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- Outro card de exemplo de produto -->
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="card">
-                    <img src="../imagens/doces/pudim.jpg" class="card-img-top img-fluid product-image"
-                        alt="Imagem do Produto">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do Produto 2</h5>
-                        <p class="card-text">
-                            <strong>Código de Barras:</strong> 0987654321<br>
-                            <strong>Quantidade:</strong> 30<br>
-                            <strong>Preço:</strong> R$ 49,99<br>
-                            <strong>Descrição:</strong> Esta é outra descrição do produto.
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Excluir</button>
-                        </div>
+                  <img src="../imagens/categorias/bebidas.jpg" class="card-img-top img-fluid category-image" alt="Imagem da Categoria">
+                  <div class="card-body">
+                    <h5 class="card-title">Nome da Categoria 2</h5>
+                    <p class="card-text">
+                      <strong>Descrição:</strong> Esta é outra descrição da categoria.
+                    </p>
+                    <div class="d-flex justify-content-between">
+                      <button class="btn btn-primary">Editar</button>
+                      <button class="btn btn-danger">Excluir</button>
                     </div>
+                  </div>
                 </div>
-            </div>
-
-            <!-- Outro card de exemplo de produto -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card">
-                    <img src="../imagens/doces/bolo.jpg" class="card-img-top img-fluid product-image"
-                        alt="Imagem do Produto">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do Produto 3</h5>
-                        <p class="card-text">
-                            <strong>Código de Barras:</strong> 0987654322<br>
-                            <strong>Quantidade:</strong> 20<br>
-                            <strong>Preço:</strong> R$ 29,99<br>
-                            <strong>Descrição:</strong> Esta é uma outra descrição do produto.
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Excluir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+              </div>
+          
+            <!-- Mais cards de exemplo de categoria podem ser adicionados aqui -->
+          </section>
+          
+          <style>
+            .category-image {
+              max-height: 200px;
+              object-fit: cover;
+            }
+          </style>
+          
 
     </main>
 
