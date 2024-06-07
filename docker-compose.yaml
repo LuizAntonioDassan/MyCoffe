@@ -1,43 +1,9 @@
-version: '3.8'
-
+version: '3.9'
 services:
-  app:
+  php:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./dockerfiles/php
     ports:
       - "81:81"
     volumes:
-      - .:/var/www/html
-    networks:
-      - mycoffe-net
-
-  nginx:
-    build:
-      context: ./phpdocker/nginx
-      dockerfile: Dockerfile
-    ports:
-      - "8080:80"
-    volumes:
-      - .:/var/www/html
-    depends_on:
-      - app
-    networks:
-      - mycoffe-net
-
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_DB: mydb
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    networks:
-      - mycoffe-net
-
-networks:
-  mycoffe-net:
-
-volumes:
-  pgdata:
+      - .:/var/www/html/

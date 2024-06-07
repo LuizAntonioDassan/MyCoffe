@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* ---------- VARIÁVEIS CSS E FONTES ---------- */
+
+:root {
+    /* CORES */
+    --cor1: #EBF1F2;
+    --cor2: #D98A29;
+    --cor3: #8C5230;
+    --cor4: #BF8563;
+    --cor5: #401201;
+    --cor6: #000000;
+    /* FONTES */
+    --fonte1: 'Jost', sans-serif;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url(../fontes/Jost-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* ---------- CONFIGURAÇÕES GLOBAIS ---------- */
+* {
+    font-family: var(--fonte1);
+}
+
+/* ---------- CONFIGURAÇÕES DO HEADER ---------- */
+header {
+    background-color: var(--cor5);
+}
+
+/* COR DO TEXTO */
+.custom-navbar .navbar-nav .nav-link {
+    color: var(--cor1);
+    /* Define a cor do texto para branco */
+}
+/* COR DA LOGO */
+.custom-navbar .navbar-brand {
+    color: var(--cor1);
+    /* Define a cor do texto do logotipo para branco */
+}
+/* COR DO ÍCONE DE MENU */
+.custom-navbar .navbar-toggler-icon {
+    filter: invert(1);
+    /* Inverte as cores do ícone */
+}
+/* TIRANDO A BORDA DO ÍCONE DE MENU */
+.custom-navbar .navbar-toggler {
+    background-color: transparent;
+    /* Define o fundo do botão como transparente */
+    border: none;
+    /* Remove a borda do botão */
+    outline: none;
+    /* Remove o contorno do botão ao ser clicado */
+    box-shadow: none;
+    /* Remove qualquer sombra do botão */
+}
+
+/* ---------- CONFIGURAMÇÕES DA MAIN ---------- */
+
+main{
+    min-height: 90vh;
+}
+
+/* ---------- CONFIGURAÇÕES DO FOOTER ---------- */
+
+footer {
+    background-color: var(--cor5);
+    color: var(--cor1);
+}
+
+footer .btn {
+    color: var(--cor1);
+}
