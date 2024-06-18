@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'Jost';
-    src: url(../fontes/Jost-VariableFont_wght.ttf) format('truetype');
+    src: url(/public/fontes/Jost-VariableFont_wght.ttf) format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }
@@ -58,7 +58,7 @@ header {
     /* Remove qualquer sombra do botão */
 }
 
-/* ---------- CONFIGURAMÇÕES DA MAIN ---------- */
+/* ---------- CONFIGURAMÇÕES DA MAIN ----------- */
 
 main{
     min-height: 95vh;
@@ -73,4 +73,34 @@ footer {
 
 footer .btn {
     color: var(--cor1);
+}
+
+/* ---------- VALIDAÇÃO ------------------------ */
+
+.error-message {
+    display: none;
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    z-index: 10;
+}
+.form-group {
+    position: relative;
+}
+
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+p {
+    margin: 0px;
+    padding: 0px;
 }

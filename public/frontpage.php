@@ -1,20 +1,22 @@
+<?php
+/* if (isset($_SESSION['emailUsuario'])) {
+  header('Location: /produtos');
+  exit();
+} */
+?>
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="public/documentos-css/style.css">
-  <link rel="stylesheet" href="public/documentos-css/index.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="public/js/frontpage.js"></script>
+  <link rel="stylesheet" href="/public/documentos-css/style.css">
+  <link rel="stylesheet" href="/public/documentos-css/formulario.css">
+</head>
 
-<body>
 
-  <?php include('public/navbar.php'); ?>
 
+<html lang="en">
+  <?php include('public/navbar.php'); 
+  ?>
   <main>
     <!-- FORMULÁRIO -->
     <section class="container my-4">
@@ -31,20 +33,28 @@
         </div>
         <div class="col-md-6">
           <h2>Cadastre-se</h2>
-          <form>
-            <div class="form-group">
+          <form action="createSimplifiedUser" method="post" id="registrationForm">
+            <div class="form-group" >
               <label for="name">Nome</label>
-              <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
+              <input type="text" class="form-control" id="name" name="nome" placeholder="Digite seu nome">
+              <span id="nameError" class="error-message"></span>
             </div>
             <div class="form-group mt-3">
               <label for="email">E-mail</label>
-              <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail">
+              <span id="emailError" class="error-message"></span>
             </div>
             <div class="form-group mt-3">
               <label for="password">Senha</label>
-              <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+              <input type="password" class="form-control" id="password" name="senha" placeholder="Digite sua senha">
+              <span id="passwordError" class="error-message"></span>
             </div>
-            <button type="submit" class="btn botao-cadastar-home">Cadastrar</button>
+            <button type="submit" class="btn botao-cadastar-home">
+              Cadastrar
+              <div class="spinner-border" id="spinner" role="status" hidden="true">
+                    <span class="sr-only"></span>
+              </div>
+            </button>
           </form>
         </div>
       </div>
@@ -71,7 +81,7 @@
       </div>
     </section>
 
-    <hr>
+    
 
     <!-- CATEGORIAS -->
     <section class="container my-4">

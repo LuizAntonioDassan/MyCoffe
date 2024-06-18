@@ -1,4 +1,5 @@
 <?php
+  session_start();
   // Obtém a URL solicitada
   $request = $_SERVER['REQUEST_URI'];
   
@@ -12,20 +13,45 @@
     return false; // Permite que o servidor PHP integrado sirva os arquivos estáticos
 }
   
-  // Roteamento básico
   switch ($request) {
+    //paginas diretas
       case '/':
           require $baseDir . '/frontpage.php';
           break;
-      case '/conta.php':
-          require $baseDir . '/conta.php';
+      case '/conta':
+          require $baseDir . '/documentos-html/conta.php';
           break;
-      case '/produtos.php':
+      case '/produtos':
           require $baseDir . '/produtos.php';
           break;
-      // Adicione mais casos para outras páginas
+    //telas em Documentos-html
+      case '/login':
+          require $baseDir . '/documentos-html/login.php';
+          break;
+      case '/cadastro':
+          require $baseDir . '/documentos-html/cadastro.php';
+          break;
+      case '/cadastroProduto':
+          require $baseDir . '/documentos-html/registrarProduto.php';
+          break;
+    //Controladores
+      case '/createSimplifiedUser':
+          require 'controller/createSimplifiedUser.php';
+          break;
+      case '/emailExist.php':
+          require 'controller/emailExist.php';
+          break;
+      case '/loginUser.php':
+          require 'controller/loginUser.php';
+          break;
+      case '/logout':
+          require 'controller/Logout.php';
+          break;
+      case '/createProduct':
+          require 'controller/createProduct.php';
+          break;
+    //Tela de erro
       default:
-          // Página 404 personalizada
           http_response_code(404);
           require $baseDir . '/404.php';
           break;

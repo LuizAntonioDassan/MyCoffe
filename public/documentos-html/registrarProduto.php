@@ -8,44 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../documentos-css/formulario.css">
-    <link rel="stylesheet" href="../documentos-css/style.css">
+    <link rel="shortcut icon" href="public/icones/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="public/documentos-css/formulario.css">
+    <link rel="stylesheet" href="public/documentos-css/style.css">
 
 <body>
 
-    <header>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg custom-navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">MyCoffee</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Carrinho</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Minha conta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Entrar</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <?php require_once('public/navbar.php');?>
 
     <main>
         <div class="container">
@@ -54,35 +23,35 @@
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title text-center mb-4">Registro de Produto</h3>
-                            <form>
+                            <form method="post" action="createProduct" id="registraProduto" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="nome-produto" class="form-label">Nome do produto</label>
                                     <input type="text" class="form-control" id="nome-produto"
-                                        placeholder="Digite o nome do produto">
+                                        placeholder="Digite o nome do produto" name="nome-produto">
                                 </div>
                                 <div class="mb-3">
                                     <label for="codigo-barras" class="form-label">Código de barras</label>
                                     <input type="text" class="form-control" id="codigo-barras"
-                                        placeholder="Digite o código de barras">
+                                        placeholder="Digite o código de barras" name="codigo-barras">
                                 </div>
                                 <div class="mb-3">
                                     <label for="quantidade" class="form-label">Quantidade</label>
                                     <input type="number" class="form-control" id="quantidade"
-                                        placeholder="Digite a quantidade">
+                                        placeholder="Digite a quantidade" name="quantidade">
                                 </div>
                                 <div class="mb-3">
                                     <label for="preco" class="form-label">Preço (R$)</label>
                                     <input type="number" class="form-control" id="preco" placeholder="Digite o preço"
-                                        step="0.01">
+                                        step="0.01" name="preco">
                                 </div>
                                 <div class="mb-3">
                                     <label for="descricao" class="form-label">Descrição</label>
                                     <textarea class="form-control" id="descricao" rows="3"
-                                        placeholder="Digite a descrição do produto"></textarea>
+                                        placeholder="Digite a descrição do produto" name="descricao"></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="imagem-produto" class="form-label">Imagem</label>
-                                    <input type="file" class="form-control" id="imagem-produto">
+                                    <input type="file" class="form-control" id="imagem-produto" name="imagem-produto">
                                 </div>
                                 <button type="submit" class="btn botao-cadastrar w-100">Cadastrar produto</button>
                             </form>

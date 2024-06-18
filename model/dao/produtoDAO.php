@@ -12,18 +12,19 @@ class ProdutoDAO {
 
     // Método para criar um novo produto
     public function create(Produto $produto) {
-        $query = "INSERT INTO {$this->table_name} (nome, preco, precodesconto, codigointerno, codigobarras, marca, quantidade, atividade, nomecategoria) 
-                  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
-        $result = pg_query_params($this->conn, $query, array(
+        $query = "INSERT INTO {$this->table_name} (nome, preco, precodesconto,  codigobarras, marca, quantidade, atividade, nomecategoria, descricao, imagem) 
+                  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+            $result = pg_query_params($this->conn, $query, array(
             $produto->nome,
             $produto->preco,
             $produto->precodesconto,
-            $produto->codigointerno,
             $produto->codigobarras,
             $produto->marca,
             $produto->quantidade,
             $produto->atividade,
-            $produto->categoria
+            $produto->categoria,
+            $produto->descricao,
+            $produto->imagem
         ));
         
         if ($result) {
@@ -48,9 +49,10 @@ class ProdutoDAO {
                     $row['codigointerno'],
                     $row['codigobarras'],
                     $row['marca'],
-                    $row['quantidade'],
                     $row['atividade'],
-                    $row['nomecategoria']
+                    $row['quantidade'],
+                    $row['nomecategoria'],
+                    $row['descricao'],
                 );
             }
             return $produtos;
@@ -74,9 +76,10 @@ class ProdutoDAO {
                     $row['codigointerno'],
                     $row['codigobarras'],
                     $row['marca'],
-                    $row['quantidade'],
                     $row['atividade'],
-                    $row['nomecategoria']
+                    $row['quantidade'],
+                    $row['categoria'],
+                    $row['descricao']
                 );
             } else {
                 return null;

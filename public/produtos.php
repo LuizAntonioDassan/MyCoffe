@@ -1,18 +1,9 @@
+<?php require_once("controller/isLogged.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produtos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="public/documentos-css/style.css">
-  <link rel="stylesheet" href="public/documentos-css/produtos.css">
-
 <body>
-    <?php include('public/navbar.php'); ?>
+    <?php include('public/navbar.php');
+    ?>
   <main>
 
     <!-- FILTRAR E BARRA DE PESQUISA -->
@@ -43,73 +34,34 @@
     <!-- LISTA DE CARDS DOS PRODUTOS -->
     <section class="container mt-2 mb-4">
       <div class="row">
+        <?php 
+        require_once('./model/dao/produtoDAO.php');
+        require_once('./model/conn/Database.php');
+        $database = new Database();
+        $produtoDB = new ProdutoDAO($database->getConnection()); 
+        $listProdutos = $produtoDB->readAll();
 
+        if($listProdutos){
+          foreach($listProdutos as $produto){
+
+        ?>
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
           <div class="card h-100">
-            <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
+            <?php if($produto->getImagem()): ?>
+              <!--<img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto"> -->
+              <img src="data:image/jpeg;base64,<?php echo base64_encode(pg_unescape_bytea($produto->getImagem())); ?>" alt="Imagem do Produto" width="100">
+            <?php endif ?>
             <div class="card-body">
-              <h5 class="card-title">Nome do Produto</h5>
-              <p class="card-text">Breve descrição do Produto.</p>
-              <p class="card-text">Preço: R$ XX,XX</p>
+              <h5 class="card-title"><?php echo $produto->getNome(); ?></h5>
+              <p class="card-text"><?php echo $produto->getDescricao(); ?></p>
+              <p class="card-text">Preço: R$ <?php echo $produto->getPreco(); ?></p>
               <a href="#" class="btn botao-comprar-produtos">Comprar</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-          <div class="card h-100">
-            <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
-            <div class="card-body">
-              <h5 class="card-title">Nome do Produto</h5>
-              <p class="card-text">Breve descrição do Produto.</p>
-              <p class="card-text">Preço: R$ XX,XX</p>
-              <a href="#" class="btn botao-comprar-produtos">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-          <div class="card h-100">
-            <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
-            <div class="card-body">
-              <h5 class="card-title">Nome do Produto</h5>
-              <p class="card-text">Breve descrição do Produto.</p>
-              <p class="card-text">Preço: R$ XX,XX</p>
-              <a href="#" class="btn botao-comprar-produtos">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-          <div class="card h-100">
-            <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
-            <div class="card-body">
-              <h5 class="card-title">Nome do Produto</h5>
-              <p class="card-text">Breve descrição do Produto.</p>
-              <p class="card-text">Preço: R$ XX,XX</p>
-              <a href="#" class="btn botao-comprar-produtos">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-          <div class="card h-100">
-            <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
-            <div class="card-body">
-              <h5 class="card-title">Nome do Produto</h5>
-              <p class="card-text">Breve descrição do Produto.</p>
-              <p class="card-text">Preço: R$ XX,XX</p>
-              <a href="#" class="btn botao-comprar-produtos">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-          <div class="card h-100">
-            <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
-            <div class="card-body">
-              <h5 class="card-title">Nome do Produto</h5>
-              <p class="card-text">Breve descrição do Produto.</p>
-              <p class="card-text">Preço: R$ XX,XX</p>
-              <a href="#" class="btn botao-comprar-produtos">Comprar</a>
-            </div>
-          </div>
-        </div>
+        <?php  }
+          }  
+        ?>
 
       </div>
     </section>

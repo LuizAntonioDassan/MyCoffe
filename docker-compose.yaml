@@ -1,5 +1,15 @@
 version: '3.9'
 services:
+  nginx:
+    build:
+      context: ./dockerfiles/nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - php
+
   php:
     build:
       context: ./dockerfiles/php
