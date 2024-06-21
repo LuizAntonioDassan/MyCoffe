@@ -66,16 +66,16 @@
 }
 
 .sessao_bemVindo{
-    background-color: var(--cor2);
+    background-image: linear-gradient(45deg , var(--cor2) , var(--cor4));
 }
 .sessao_sobreNos{
-    background-color: var(--cor3);
+    background-image: linear-gradient(45deg , var(--cor5) , var(--cor3));
 }
 .sessao_produtos{
-    background-color: var(--cor2);
+    background-image: linear-gradient(90deg , var(--cor4) , var(--cor2));
 }
 .sessao_planos{
-    background-color: var(--cor3);
+    background-image: linear-gradient(180deg , var(--cor5) , var(--cor2));
 }
 
 /* CARDS */
