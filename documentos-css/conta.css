@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+    background-color: var(--cor1);
+}
+
 main .btn{
     background-color: var(--cor5);
     color: white;
