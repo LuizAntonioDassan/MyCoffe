@@ -36,3 +36,61 @@
     font-weight: 600;
     font-size: 1.5rem; /* Aumente o valor conforme necessário */
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 767px) {
+    body {
+        background-color: lightblue;
+        color: white;
+    }
+    .sessao{
+        margin-top: 0px;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    body{
+        color: white;
+    }
+    .sessao{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .sessao_produtos{
+        padding-top: 30px;
+    }
+}
+
+.sessao_bemVindo{
+    background-color: var(--cor2);
+}
+.sessao_sobreNos{
+    background-color: var(--cor3);
+}
+.sessao_produtos{
+    background-color: var(--cor2);
+}
+.sessao_planos{
+    background-color: var(--cor3);
+}
+
+/* CARDS */
+
+@media (min-width: 992px) {
+    .card-img-top{
+        max-height: 250px;
+        max-width: 280px;
+    }
+    .sessao_produtos .card{
+        max-width: 280px;
+        margin: auto;
+    }
+    
+    .teste{
+        background-color: blue;
+    }
+}
