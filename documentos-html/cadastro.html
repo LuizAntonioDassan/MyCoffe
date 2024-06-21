@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../documentos-css/style.css">
     <link rel="stylesheet" href="../documentos-css/formulario.css">
+</head>
 
 <body>
 
