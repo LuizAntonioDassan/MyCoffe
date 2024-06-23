@@ -74,3 +74,16 @@ footer {
 footer .btn {
     color: var(--cor1);
 }
+
+.botao-verde , .botao-verde:hover{
+    background-color: darkgreen;
+    color: white;
+}
+.botao-azul , .botao-azul:hover{
+    background-color: darkblue;
+    color: white;
+}
+.botao-vermelho , .botao-vermelho:hover{
+    background-color: darkred;
+    color: white;
+}

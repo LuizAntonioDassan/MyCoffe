@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-.botao-comprar-produtos{
-    background-color: var(--cor5);
-    color: var(--cor1);
+.botao-comprar-produto{
+    background-color: darkgreen;
+    color: white;
     font-weight: 600;
 }
 
