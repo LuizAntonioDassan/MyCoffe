@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
 .btn-gourmet , .btn-gourmet:hover , .header-gourmet{
     background-color: var(--cor5);
     color: var(--cor1);
@@ -65,6 +69,18 @@
     }
 }
 
+@media (min-width: 992px) {
+    .card-img-top{
+        max-height: 250px;
+        max-width: 280px;
+    }
+    .sessao_produtos .card{
+        max-width: 280px;
+        margin: auto;
+    }
+    
+}
+
 .sessao_bemVindo{
     background-image: linear-gradient(45deg , var(--cor2) , var(--cor4));
 }
@@ -80,17 +96,3 @@
 
 /* CARDS */
 
-@media (min-width: 992px) {
-    .card-img-top{
-        max-height: 250px;
-        max-width: 280px;
-    }
-    .sessao_produtos .card{
-        max-width: 280px;
-        margin: auto;
-    }
-    
-    .teste{
-        background-color: blue;
-    }
-}

@@ -47,30 +47,32 @@
     </nav>
   </header>
 
-  <main class="container my-5" style="max-width: 800px; margin: auto;">
-    <h1 class="mb-4">Carrinho de Compras</h1>
-
-    <!-- Lista de Produtos -->
-    <div class="list-group mb-4">
-      <!-- Item do Produto -->
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center">
-          <img src="../imagens/artesanais/doce-de-leite.jpg" alt="Produto" class="img-thumbnail"
-            style="width: 100px; height: 100px; object-fit: cover;">
-          <div class="ms-3">
-            <h5 class="mb-1">Nome do produto</h5>
-            <div>
-              <input type="number" class="form-control text-center" value="1" min="1" max="99">
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <span class="h5 mb-0 me-3">R$ XX,XX</span>
-          <button class="btn botao-vermelho btn-sm">Excluir</button>
-        </div>
+  <main class="container my-5" style="max-width: 800px; margin: auto;">    
+    
+    <div class="list-group mb-1 item-carrinho">
+      <img src="../imagens/salgados/cachorro-quente.jpg" alt="" style="max-width: 120px; max-width: 120px;">
+      <div class="nome-quantidade-carrinho">
+        <span class="mx-1">Nome do produto</span>
+        <input type="number" name="" id="" value="1" min="1" max="10" class="mx-1">
       </div>
-
+      <div class="preco-botao-carrinho">
+        <span class="mx-1 text-center">Preço: R$ 888,88</span>
+        <button class="mx-1 botao-vermelho">Excluir</button>
+      </div>
     </div>
+
+    <div class="list-group mb-1 item-carrinho">
+      <img src="../imagens/bebidas/cafe.jpg" alt="" style="max-width: 120px; max-width: 120px;">
+      <div class="nome-quantidade-carrinho">
+        <span class="mx-1">Nome do produto</span>
+        <input type="number" name="" id="" value="1" min="1" max="10" class="mx-1">
+      </div>
+      <div class="preco-botao-carrinho">
+        <span class="mx-1 text-center">Preço: R$ 888,88</span>
+        <button class="mx-1 botao-vermelho">Excluir</button>
+      </div>
+    </div>
+    
     <!-- Fim da Lista de Produtos -->
 
     <!-- Resumo do Pedido -->
@@ -79,16 +81,16 @@
         <h5 class="card-title">Resumo do Pedido</h5>
         <ul class="list-group list-group-flush">
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Subtotal <span>R$99,99</span>
+            Subtotal <span>R$</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Frete <span>R$10,00</span>
+            Frete <span>R$</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Descontos <span>-R$5,00</span>
+            Descontos <span>- R$</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            <strong>Total</strong> <strong>R$104,99</strong>
+            <strong>Total</strong> <strong>R$</strong>
           </li>
         </ul>
       </div>
@@ -97,9 +99,9 @@
 
     <!-- Botões de Ação -->
     <div class="d-flex justify-content-between">
-      <button class="btn botao-vermelho">Cancelar Compra</button>
-      <button class="btn mx-1 botao-azul">Continuar comprando</button>
-      <button class="btn botao-verde">Confirmar Pagamento</button>
+      <a href="#"><button class="btn botao-vermelho">Cancelar Compra</button></a>
+      <a href="#"><button class="btn mx-1 botao-azul">Continuar comprando</button></a>
+      <a href="#"><button class="btn botao-verde">Confirmar Pagamento</button></a>
     </div>
     <!-- Fim dos Botões de Ação -->
   </main>
