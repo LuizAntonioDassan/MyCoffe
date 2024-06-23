@@ -35,8 +35,6 @@ input[type="date"]:focus,
     /* Remove a sombra padrão */
 }
 
-/* EDITAR DEPOIS ------------------------- */
-
 body{
     background-image: linear-gradient(270deg , var(--cor4) , var(--cor2) , var(--cor3));
 }
