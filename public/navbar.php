@@ -8,61 +8,68 @@
   <link rel="stylesheet" href="/public/documentos-css/style.css">
   <link rel="stylesheet" href="/public/documentos-css/index.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <body>
 
-<header>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/">MyCoffee</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <?php 
-                  if (isset($_SESSION['idUsuario'])) {                 
-                  ?>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/">Principal</a>
-                    </li>
-                  <?php } ?>
+  <header>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <?php if (!isset($_SESSION['idUsuario'])) { ?>
+          <a class="navbar-brand" href="/">
+            MyCoffee
+          </a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="" href="login">Login</a>
+            </li>
+          </ul>
+          <?php } else { ?>
+            <a class="navbar-brand" href="/produtos">
+            MyCoffee
+          </a>
+        <?php } ?>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <?php
+            if (isset($_SESSION['idUsuario'])) {
+              ?>
+              <!--<li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Principal</a>
+              </li>-->
+              <li class="nav-item">
+                <a class="nav-link" href="produtos">Produtos</a>
+              </li>
+              <!--
+              <li class="nav-item">
+                <a class="nav-link" href="carrinho.php">Carrinho</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="conta">Minha conta</a>
+              </li>
+            <?php } ?>
+            <?php
+            if (isset($_SESSION['Administrador'])) {
+              ?>
+              <li class="nav-item">
+                <a class="nav-link" href="cadastroProduto">CadastrarProduto</a>
+              </li>
+            <?php } ?>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="produtos">Produtos</a>
-                  </li>
-                  <!--
-                  <li class="nav-item">
-                    <a class="nav-link" href="carrinho.php">Carrinho</a>
-                  </li> -->
-                  <?php 
-                    if(isset($_SESSION['idUsuario'])){ 
-                  ?>
-                  <li class="nav-item">
-                    <a class="nav-link" href="conta">Minha conta</a>
-                  </li>
-                  <?php } ?>
-                  <?php 
-                    if(isset($_SESSION['Administrador'])){ 
-                      ?>
-                  <li class="nav-item">
-                    <a class="nav-link" href="cadastroProduto">CadastrarProduto</a>
-                  </li>
-                  <?php } ?>
-                  
-                  <?php 
-                  if (!isset($_SESSION['idUsuario'])) {                 
-                  ?>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="" href="login">Login</a>
-                    </li>
-                    <?php }else{ ?>
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="" href="logout">Logout</a>
-                    </li>
-                    <?php }?>
-                      </ul> 
-              </div>
-            </div>
-        </nav>
-    </header>
+            <?php
+            if (!isset($_SESSION['idUsuario'])) {
+              ?>
+            <?php } else { ?>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="" href="logout">Logout</a>
+              </li>
+            <?php } ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>

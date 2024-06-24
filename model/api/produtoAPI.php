@@ -20,8 +20,8 @@ class Produto {
         $this->codigointerno = $codigointerno;
         $this->codigobarras = $codigobarras;
         $this->marca = $marca;
-        $this->quantidade = $quantidade;
         $this->atividade = $atividade;
+        $this->quantidade = $quantidade;
         $this->categoria = $categoria;
         $this->descricao = $descricao;
     } 
@@ -109,6 +109,14 @@ class Produto {
     public function getDescricao()
     {
         return $this->descricao;
+    }
+
+    /**
+     * Get the value of codigointerno
+     */ 
+    public function getCodigointerno()
+    {
+        return $this->codigointerno;
     }
 }
 ?>

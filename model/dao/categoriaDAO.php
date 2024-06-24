@@ -11,8 +11,8 @@ class CategoriaDAO {
     }
 
     public function create(Categoria $categoria) {
-        $query = "INSERT INTO {$this->table_name} (id, nome) VALUES ($1, $2)";
-        $result = pg_query_params($this->conn, $query, array($categoria->id, $categoria->nome));
+        $query = "INSERT INTO {$this->table_name} (nome) VALUES ($1)";
+        $result = pg_query_params($this->conn, $query, array($categoria->nome));
         
         if ($result) {
             return true;
@@ -28,7 +28,9 @@ class CategoriaDAO {
         if ($result) {
             $categorias = [];
             while ($row = pg_fetch_assoc($result)) {
-                $categorias[] = new Categoria($row['id'], $row['nome']);
+                $categoria = new Categoria($row['nome']);
+                $categoria->setId($row['id']);
+                $categorias[] = $categoria;
             }
             return $categorias;
         } else {
@@ -43,7 +45,9 @@ class CategoriaDAO {
         if ($result) {
             $row = pg_fetch_assoc($result);
             if ($row) {
-                return new Categoria($row['id'], $row['nome']);
+                $categoria = new Categoria($row['nome']);
+                $categoria->setId($row['id']);
+                return $categoria;
             } else {
                 return null;
             }

@@ -16,7 +16,7 @@
 <body>
 
     <?php include('public/navbar.php'); ?>
-    </header>
+    
 
     <main>
         <div class="container">

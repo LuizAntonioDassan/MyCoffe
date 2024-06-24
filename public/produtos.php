@@ -55,6 +55,7 @@
               <h5 class="card-title"><?php echo $produto->getNome(); ?></h5>
               <p class="card-text"><?php echo $produto->getDescricao(); ?></p>
               <p class="card-text">Preço: R$ <?php echo $produto->getPreco(); ?></p>
+              <p class="card-text">Descrição: <?php echo $produto->getDescricao(); ?></p>
               <a href="#" class="btn botao-comprar-produtos">Comprar</a>
             </div>
           </div>

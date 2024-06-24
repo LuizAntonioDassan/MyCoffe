@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Funcionario</title>
+    <title>Editar Cliente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
@@ -14,38 +14,7 @@
 
 <body>
 
-    <header>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg custom-navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">MyCoffee</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Carrinho</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Minha conta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Entrar</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+<?php include('public/navbar.php'); ?>
 
 
     <body>
@@ -55,7 +24,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title text-center mb-4">Editar funcionário</h3>
+                                <h3 class="card-title text-center mb-4">Editar cliente</h3>
                                 <form>
                                     <div class="mb-3">
                                         <label for="nome" class="form-label">Nome</label>
@@ -89,30 +58,10 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Permissão</label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="genero" id="masculino"
-                                                value="masculino">
-                                            <label class="form-check-label" for="masculino">
-                                                Funcionário
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="genero" id="feminino"
-                                                value="feminino">
-                                            <label class="form-check-label" for="feminino">
-                                                Administrador
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="data-nascimento" class="form-label">Data de nascimento</label>
                                         <input type="date" class="form-control" id="data-nascimento">
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="foto-perfil" class="form-label">Foto de perfil</label>
-                                        <input type="file" class="form-control" id="foto-perfil">
-                                    </div>
+                                    
                                     <button type="submit" class="btn botao-cadastrar w-100">Salvar alterações</button>
                                 </form>
                             </div>
