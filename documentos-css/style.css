@@ -58,6 +58,19 @@ header {
     /* Remove qualquer sombra do botão */
 }
 
+@media (min-width: 992px) {
+    .navbar-nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .links-navbar{
+        display: flex;
+    }    
+}
+
+
+
 /* ---------- CONFIGURAMÇÕES DA MAIN ---------- */
 
 main{
