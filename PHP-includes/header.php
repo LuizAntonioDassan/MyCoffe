@@ -8,6 +8,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -15,14 +16,25 @@
                         <a class="nav-link" href="#">Produtos</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#">Minha conta</a> <!-- Cliente -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Criar conta</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Entrar</a> <!-- Login -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sair</a> <!-- Logout -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Painel de funcionário</a> <!-- Painel administrativo -->
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Carrinho</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Minha conta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Entrar/Sair</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
