@@ -1,3 +1,15 @@
+<?php
+require_once ('./model/dao/carrinhoDAO.php');
+require_once ('./model/dao/produtoDAO.php');
+require_once ('./model/conn/Database.php');
+$database = new Database();
+$produtoDao = new ProdutoDAO($database->getConnection());
+
+$carrinho_id = session_id();
+
+$carrinhoDao = new CarrinhoDAO();
+$listCarrinho = $carrinhoDao->readById($carrinho_id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,60 +26,53 @@
 
 <body>
 
-<?php include('public/navbar.php'); ?>
+  <?php include ('public/navbar.php'); ?>
 
   <main class="container my-5" style="max-width: 800px; margin: auto;">
     <h1 class="mb-4">Carrinho de Compras</h1>
-  
-    <!-- Lista de Produtos -->
-    <div class="list-group mb-4">
-      <!-- Item do Produto -->
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center">
-          <img src="../imagens/artesanais/doce-de-leite.jpg" alt="Produto" class="img-thumbnail"
-            style="width: 100px; height: 100px; object-fit: cover;">
-          <div class="ms-3">
-            <h5 class="mb-1">Doce de leite</h5>
-            <div>
-              <input type="number" class="form-control text-center" value="1" min="1" max="99">
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <span class="h5 mb-0 me-3">R$9,99</span>
-          <button class="btn btn-outline-danger btn-sm">Excluir</button>
-        </div>
-      </div>
 
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center">
-          <img src="../imagens/artesanais/goiabada.jpg" alt="Produto" class="img-thumbnail"
-            style="width: 100px; height: 100px; object-fit: cover;">
-          <div class="ms-3">
-            <h5 class="mb-1">Goiabada</h5>
-            <div>
-              <input type="number" class="form-control text-center" value="1" min="1" max="99">
+    <!-- Lista de Produtos -->
+    <?php
+    if ($listCarrinho) {
+      $valorFinal = 0;
+      foreach ($listCarrinho as $carrinho) {
+        $produto = $produtoDao->readByCodigoBarras($carrinho->getCodigoProduto());
+        $valorFinal += ($produto->preco) * $carrinho->getQuantidade();
+        ?>
+        <div class="list-group mb-4">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/public/imagens/artesanais/doce-de-leite.jpg" alt="Produto" class="img-thumbnail"
+                style="width: 100px; height: 100px; object-fit: cover;">
+              <div class="ms-3">
+                <h5 class="mb-1"><?php echo $produto->getNome(); ?></h5>
+                <div>
+                  <input type="number" class="form-control text-center" value="<?php echo $carrinho->getQuantidade(); ?>"
+                    min="1" max="99">
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="h5 mb-0 me-3">R$<?php echo $produto->getPreco(); ?></span>
+              <button class="btn btn-outline-danger btn-sm">Excluir</button>
             </div>
           </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <span class="h5 mb-0 me-3">R$9,99</span>
-          <button class="btn btn-outline-danger btn-sm">Excluir</button>
-        </div>
-      </div>
-      <!-- Fim do Item do Produto -->
-  
+          <!-- Fim do Item do Produto -->
+          <?php
+      }
+    }
+    ?>
       <!-- Repita o bloco acima para cada produto -->
     </div>
     <!-- Fim da Lista de Produtos -->
-  
+
     <!-- Resumo do Pedido -->
     <div class="card mb-4">
       <div class="card-body">
         <h5 class="card-title">Resumo do Pedido</h5>
         <ul class="list-group list-group-flush">
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Subtotal <span>R$99,99</span>
+            Subtotal <span>R$<?php if(isset($valorFinal)){echo $valorFinal;} ?></span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Frete <span>R$10,00</span>
@@ -76,21 +81,25 @@
             Descontos <span>-R$5,00</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            <strong>Total</strong> <strong>R$104,99</strong>
+            <strong>Total</strong> <strong>R$<?php if(isset($valorFinal)){echo $valorFinal;} ?></strong>
           </li>
         </ul>
       </div>
     </div>
     <!-- Fim do Resumo do Pedido -->
-  
+
     <!-- Botões de Ação -->
     <div class="d-flex justify-content-between">
       <button class="btn btn-danger">Cancelar Compra</button>
-      <button class="btn btn-success">Confirmar Pagamento</button>
+      <form action="finalizaCompra" method="post">
+        <input type="hidden" name="identificador" value="<?php echo session_id(); ?>">
+        <button type="submit" class="btn btn-success">Confirmar Pagamento</button>
+      </form>
     </div>
     <!-- Fim dos Botões de Ação -->
+
   </main>
-  
+
 
 
   <footer class="text-center background-footer">

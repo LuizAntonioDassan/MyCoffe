@@ -38,6 +38,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['Administrador'] = true;
                 $response['success'];
             }
+            $queryCliente = "SELECT datanascimento, rg, cpf from cliente u  where id = $1";
+            $resultCliente = pg_query_params($db, $queryCliente, array($_SESSION['idUsuario']));          
+            if($resultCliente && pg_num_rows($resultCliente) > 0){
+                $row = pg_fetch_assoc($resultCliente);
+                $_SESSION['rg'] = $row['rg'];
+                $_SESSION['dataNasc'] = $row['datanascimento'];
+                $_SESSION['cpf'] = $row['cpf'];
+                $response['success'];
+            }
+
 
             $response['success'] = true;
         } else {

@@ -6,13 +6,15 @@ class CarrinhoDAO {
     private $conn;
     private $table_name = 'carrinho';
 
-    public function __construct($db) {
-        $this->conn = $db;
+    public function __construct() {
+        $database = new Database();
+        $db = $database->getConnection();
+        $this->conn =$db;
     }
 
     public function create(Carrinho $carrinho) {
-        $query = "INSERT INTO {$this->table_name} (identificador, codigoProduto, precoFinal) VALUES ($1, $2, $3)";
-        $result = pg_query_params($this->conn, $query, array($carrinho->id, $carrinho->codigoProduto, $carrinho->precoFinal));
+        $query = "INSERT INTO {$this->table_name} (identificador, codigoProduto, precoFinal, quantidade) VALUES ($1, $2, $3, $4)";
+        $result = pg_query_params($this->conn, $query, array($carrinho->id, $carrinho->codigoProduto, $carrinho->precoFinal, $carrinho->quantidade));
         
         if ($result) {
             return true;
@@ -28,7 +30,7 @@ class CarrinhoDAO {
         if ($result) {
             $carrinhos = [];
             while ($row = pg_fetch_assoc($result)) {
-                $carrinhos[] = new Carrinho($row['identificador'], $row['codigoProduto'], $row['precoFinal']);
+                $carrinhos[] = new Carrinho($row['identificador'], $row['codigoProduto'], $row['precoFinal'], $row['quantidade']);
             }
             return $carrinhos;
         } else {
@@ -41,14 +43,13 @@ class CarrinhoDAO {
         $result = pg_query_params($this->conn, $query, array($id));
 
         if ($result) {
-            $row = pg_fetch_assoc($result);
-            if ($row) {
-                return new Carrinho($row['identificador'], $row['codigoProduto'], $row['precoFinal']);
-            } else {
-                return null;
+            $carrinhos = [];
+            while ($row = pg_fetch_assoc($result)) {
+                $carrinhos[] = new Carrinho($row['identificador'], $row['codigoproduto'], $row['precofinal'], $row['quantidade']);
             }
+            return $carrinhos;
         } else {
-            throw new Exception("Erro ao buscar item do carrinho: " . pg_last_error($this->conn));
+            throw new Exception("Erro ao buscar itens do carrinho: " . pg_last_error($this->conn));
         }
     }
 

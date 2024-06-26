@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="/public/icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/public/documentos-css/style.css">
     <link rel="stylesheet" href="/public/documentos-css/conta.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="public/js/conta.js"></script>
 
 <body>
 
@@ -30,7 +32,7 @@
       
         <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-4">
             <button class="btn mb-2 mx-2 mb-md-0">Editar Endereço</button>
-            <button class="btn mb-2 mx-2 mb-md-0">Editar Dados</button>
+            <button class="btn mb-2 mx-2 mb-md-0" id="btnEditar">Editar Dados</button>
         </div>
         
         <form>

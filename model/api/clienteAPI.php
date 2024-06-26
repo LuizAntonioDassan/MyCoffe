@@ -4,7 +4,6 @@ class Cliente {
     public $RG;
     public $CPF;
     public $Dt_Nascimento;
-    public $Endereco;
     public $email;
     public $nome;
     public function __construct($id, $email) {
@@ -12,12 +11,11 @@ class Cliente {
         $this->email = $email;
     }
 
-    public function cadastroCompleto($Dt_Nascimento, $RG, $CPF, $Endereco, $id, $email, $nome) {
+    public function cadastroCompleto($Dt_Nascimento, $RG, $CPF, $id, $email, $nome) {
         $this->id = $id;
         $this->RG = $RG;
         $this->CPF = $CPF;
         $this->Dt_Nascimento = $Dt_Nascimento;
-        $this->Endereco = $Endereco;
         $this->email = $email;
         $this->nome = $nome;
     }
@@ -62,14 +60,6 @@ class Cliente {
     public function getDt_Nascimento()
     {
         return $this->Dt_Nascimento;
-    }
-
-    /**
-     * Get the value of Endereco
-     */ 
-    public function getEndereco()
-    {
-        return $this->Endereco;
     }
 
     /**

@@ -12,8 +12,8 @@ class ClienteDAO {
     }
 
     public function create(Cliente $cliente) {
-        $query = "INSERT INTO {$this->tableCliente} (datanascimento, rg, cpf, endereco, id) VALUES ($1, $2, $3, $4, $5)";
-        $result = pg_query_params($this->conn, $query, array($cliente->Dt_Nascimento, $cliente->RG, $cliente->CPF, $cliente->Endereco, $cliente->id));
+        $query = "INSERT INTO {$this->tableCliente} (datanascimento, rg, cpf, id) VALUES ($1, $2, $3, $4)";
+        $result = pg_query_params($this->conn, $query, array($cliente->Dt_Nascimento, $cliente->RG, $cliente->CPF, $cliente->id));
         
         if ($result) {
             return true;
@@ -46,7 +46,7 @@ class ClienteDAO {
         if ($result) {
             $row = pg_fetch_assoc($result);
             if ($row) {
-                return new Cliente($row['datanascimento'], $row['rg'], $row['cpf'], $row['endereco'], $row['id']);
+                return new Cliente($row['datanascimento'], $row['rg'], $row['cpf'], $row['id']);
             } else {
                 return null;
             }
@@ -56,8 +56,8 @@ class ClienteDAO {
     }
 
     public function update(Cliente $cliente) {
-        $query = "UPDATE {$this->tableCliente} SET datanascimento = $1, rg = $2, cpf = $3, endereco = $4 WHERE id = $5";
-        $result = pg_query_params($this->conn, $query, array($cliente->Dt_Nascimento, $cliente->RG, $cliente->CPF, $cliente->Endereco, $cliente->id));
+        $query = "UPDATE {$this->tableCliente} SET datanascimento = $1, rg = $2, cpf = $3 WHERE id = $4";
+        $result = pg_query_params($this->conn, $query, array($cliente->Dt_Nascimento, $cliente->RG, $cliente->CPF, $cliente->id));
 
         if ($result) {
             return true;

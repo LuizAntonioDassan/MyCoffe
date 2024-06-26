@@ -1,9 +1,15 @@
-<?php require_once("controller/isLogged.php"); ?>
+<?php require_once ("controller/isLogged.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="public/js/adicionarCarrinho.js"></script>
+</head>
+
 <body>
-    <?php include('public/navbar.php');
-    ?>
+  <?php include ('public/navbar.php');
+  ?>
   <main>
 
     <!-- FILTRAR E BARRA DE PESQUISA -->
@@ -34,34 +40,43 @@
     <!-- LISTA DE CARDS DOS PRODUTOS -->
     <section class="container mt-2 mb-4">
       <div class="row">
-        <?php 
-        require_once('./model/dao/produtoDAO.php');
-        require_once('./model/conn/Database.php');
+        <?php
+        require_once ('./model/dao/produtoDAO.php');
+        require_once ('./model/conn/Database.php');
         $database = new Database();
-        $produtoDB = new ProdutoDAO($database->getConnection()); 
+        $produtoDB = new ProdutoDAO($database->getConnection());
         $listProdutos = $produtoDB->readAll();
 
-        if($listProdutos){
-          foreach($listProdutos as $produto){
+        if ($listProdutos) {
+          foreach ($listProdutos as $produto) {
 
-        ?>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-          <div class="card h-100">
-            <?php if($produto->getImagem()): ?>
-              <!--<img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto"> -->
-              <img src="data:image/jpeg;base64,<?php echo base64_encode(pg_unescape_bytea($produto->getImagem())); ?>" alt="Imagem do Produto" width="100">
-            <?php endif ?>
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $produto->getNome(); ?></h5>
-              <p class="card-text"><?php echo $produto->getDescricao(); ?></p>
-              <p class="card-text">Preço: R$ <?php echo $produto->getPreco(); ?></p>
-              <p class="card-text">Descrição: <?php echo $produto->getDescricao(); ?></p>
-              <a href="#" class="btn botao-comprar-produtos">Comprar</a>
+            ?>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card h-100">
+                <?php if ($produto->getImagem()): ?>
+                  <!--<img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto"> -->
+                  <img src="data:image/jpeg;base64,<?php echo base64_encode(pg_unescape_bytea($produto->getImagem())); ?>"
+                    alt="Imagem do Produto" width="100">
+                <?php endif ?>
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $produto->getNome(); ?></h5>
+                  <p class="card-text"><?php echo $produto->getDescricao(); ?></p>
+                  <p class="card-text">Preço: R$ <?php echo $produto->getPreco(); ?></p>
+                  <p class="card-text">Descrição: <?php echo $produto->getDescricao(); ?></p>
+                  <div>
+                    <input type="number" name="quantidade" id="quantidade_<?php echo $produto->getCodigobarras();?>" class="form-control text-center"
+                      min="1" max="99" value="1">
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-primary btn-comprar" data-codigo="<?php echo $produto->getCodigobarras(); ?>"
+                      data-preco="<?php echo $produto->getPreco(); ?>">
+                      Comprar</a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <?php  }
-          }  
+          <?php }
+        }
         ?>
 
       </div>

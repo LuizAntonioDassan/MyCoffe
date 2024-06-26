@@ -6,7 +6,9 @@ class CompraDAO {
     private $conn;
     private $table_name = 'compra';
 
-    public function __construct($db) {
+    public function __construct() {
+        $database = new Database();
+        $db = $database->getConnection();
         $this->conn = $db;
     }
 
