@@ -18,9 +18,9 @@
 
   <main class="container my-5" style="max-width: 800px; margin: auto;">
 
-    <!-- Início da lista de itens do carrinho -->
+    <!-- Lista de produtos -->
     <?php include "../PHP-includes/itemCarrinho.php"?>
-    <!-- Fim da listga de itens do carrinho -->
+    <!-- Fim da Lista de Produtos -->
 
     <!-- Resumo do Pedido -->
     <div class="card mb-4">

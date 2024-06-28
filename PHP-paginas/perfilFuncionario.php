@@ -21,12 +21,11 @@
         <div class="card mb-4 p-3">
             <h1 class="mb-4 text-center">Painel de funcionário</h1>
             <div class="card-body text-center">
-                <h3 class="mb-3"></h3> <!-- Nome do funcionário -->
-                <p class="mb-1"><strong>E-mail:</strong></p> <!-- E-mail do funcionário -->
-                <p class="mb-1"><strong>Data de Nascimento:</strong></p> <!-- Data de nascimento do funcionário (?) -->
-                <p class="mb-1"><strong>Permissão:</strong></p> <!-- Permissão do funcionário -->
+                <h3 class="mb-3">Nome do funcionário</h3>
+                <p class="mb-1"><strong>E-mail:</strong></p>
+                <p class="mb-1"><strong>Data de Nascimento:</strong></p>
+                <p class="mb-1"><strong>Permissão:</strong></p>
             </div>
-            <!-- Botões de administrador -->
             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-1">
                 <a href="#"><button class="btn mb-2 mx-2 mb-md-0">Registrar categoria</button></a>
                 <a href="#"><button class="btn mb-2 mx-2 mb-md-0">Lista de categorias</button></a>

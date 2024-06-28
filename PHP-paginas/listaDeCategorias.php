@@ -39,18 +39,13 @@
                 </div>
             </div>
         </section>
-        <!-- Fim da seção de ordenação e busca -->
 
-        <!-- Lista de produtos -->
+        <!-- Lista de categorias -->
         <section class="row">
-
-            <!-- Cards de da lista de categorias -->
-             <?php include "../PHP-includes/cardListaDeCategorias.php"?>
-            <!-- Fim dos cards de categoria -->
-
+            <!-- Lista de cards de categorias -->
+            <?php include "../PHP-includes/cardListaDeCategorias.php"?>
+            <!-- Fim de lista de card de categorias -->
         </section>
-        <!-- Fim da lista de produtos -->
-
 
     </main>
 

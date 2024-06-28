@@ -48,8 +48,8 @@
         </div>
     </main>
 
-    <?php include "../PHP-includes/footer.php"?>
-    
+    <?php include "../PHP-includes/footer.php" ?>
+
 </body>
 
 </html>

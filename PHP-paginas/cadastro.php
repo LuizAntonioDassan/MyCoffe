@@ -27,7 +27,8 @@
                             <form>
                                 <div class="mb-3">
                                     <label for="nome" class="form-label">Nome completo</label>
-                                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+                                    <input type="text" class="form-control" id="nome"
+                                        placeholder="Digite seu nome completo">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">E-mail</label>
@@ -35,7 +36,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="senha" class="form-label">Senha</label>
-                                    <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                                    <input type="password" class="form-control" id="senha"
+                                        placeholder="Digite sua senha">
                                 </div>
                                 <div class="mb-3">
                                     <label for="data-nascimento" class="form-label">Data de nascimento</label>
@@ -44,13 +46,15 @@
                                 <div class="mb-3">
                                     <label class="form-label">Gênero</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="genero" id="masculino" value="masculino">
+                                        <input class="form-check-input" type="radio" name="genero" id="masculino"
+                                            value="masculino">
                                         <label class="form-check-label" for="masculino">
                                             Masculino
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="genero" id="feminino" value="feminino">
+                                        <input class="form-check-input" type="radio" name="genero" id="feminino"
+                                            value="feminino">
                                         <label class="form-check-label" for="feminino">
                                             Feminino
                                         </label>

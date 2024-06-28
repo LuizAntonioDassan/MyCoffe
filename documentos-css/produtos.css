@@ -13,3 +13,7 @@
 body{
     background-image: linear-gradient(90deg , var(--corNova2) , var(--corNova3)); /* ---------- TESTAR COR ----------- */
 }
+
+.card{
+    background-color: var(--corNova1);
+}

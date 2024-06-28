@@ -18,7 +18,7 @@
 
     <main>
 
-        <!-- ORDENAÇÃO E BARRA DE PESQUISA -->
+        <!-- FILTRAR E BARRA DE PESQUISA -->
         <section class="container py-2">
             <div class="row">
                 <div class="col-md-6">
@@ -41,14 +41,14 @@
                 </div>
             </div>
         </section>
-        <!-- FIM DA ORDENAÇÃO DE BARRA DE PESQUISA -->
 
+        <!-- Lista de produtos à venda -->
         <section class="container mt-2 mb-4">
             <div class="row">
 
-                <!-- Início dos cards dos produtos -->
-                <?php include "../PHP-includes/cardProdutos.php"?>
-                <!-- Fim dos cards dos produtos -->
+                <!-- Lista de card de produtos da loja -->
+                 <?php include "../PHP-includes/cardProdutos.php"?>
+                <!-- Fim da lista de card de produtos da loja -->
 
             </div>
         </section>

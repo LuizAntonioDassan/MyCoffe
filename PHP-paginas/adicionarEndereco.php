@@ -17,7 +17,6 @@
     <?php include "../PHP-includes/header.php" ?>
 
     <main>
-
         <div class="container">
             <div class="row justify-content-center mt-5">
                 <div class="col-md-6">
@@ -56,10 +55,11 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <?php include "../PHP-includes/footer.php" ?>
+
+    <script src="../documentos-js/adicionarEndereco.js"></script>
 
 </body>
 

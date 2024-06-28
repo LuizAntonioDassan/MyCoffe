@@ -22,7 +22,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="dropdown py-2">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Ordenar por
                         </button>
                         <ul class="dropdown-menu">
@@ -39,17 +40,13 @@
                 </div>
             </div>
         </section>
-        <!-- Fim da seção de ordenação e busca -->
 
         <!-- Lista de clientes -->
         <section class="row">
-            
-            <!-- Início dos cards da lista de clientes -->
-            <?php include "../PHP-includes/cardListaDeClientes.php" ?>
-            <!-- Fim dos cards da lista de clientes -->
-
+            <!-- Lista de card de cliente -->
+            <?php include "../PHP-includes/cardListaDeClientes.php"?>
+            <!-- Fim de lista de card de cliente -->
         </section>
-        <!-- Fim da lista de clientes -->
 
     </main>
 

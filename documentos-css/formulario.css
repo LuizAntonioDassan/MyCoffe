@@ -40,5 +40,5 @@ body{
 }
 
 .card{
-    background-color: whitesmoke;
+    background-color: var(--corNova1);
 }

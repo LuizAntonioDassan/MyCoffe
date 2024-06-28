@@ -80,18 +80,31 @@ body{
     
 }
 
+@media (min-width: 1600px){
+    .textoBemVindo{
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    .textoSobreNos{
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+}
+
 .sessao_bemVindo{
     /* background-image: linear-gradient(90deg , var(--corNova2) , var(--corNova3)); */
     background-image: url(../imagens/pagina-principal/imagem-fundo-2.jpg);
     background-size: cover;
     background-position: right;
     background-attachment: fixed;
+    text-align: justify;
 }
 .sessao_sobreNos{
     background-image: url(../imagens/pagina-principal/imagem-fundo-3.jpg);
     background-size: cover;
     background-position: right;
     background-attachment: fixed;
+    text-align: justify;
 }
 .sessao_produtos{
     background-image: url(../imagens/pagina-principal/imagem-fundo-1.jpg);

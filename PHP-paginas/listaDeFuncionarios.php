@@ -39,17 +39,13 @@
                 </div>
             </div>
         </section>
-        <!-- Fim da seção de ordenação e busca -->
 
-        <!-- Lista de funcionários -->
+        <!-- Lista de funcionarios -->
         <section class="row">
-
-            <!-- Início dos cards da lista de funcionários -->
+            <!-- Lista de card de funcionarios -->
             <?php include "../PHP-includes/cardListaDeFuncionarios.php" ?>
-            <!-- Fim dos cards da lista de funcionários -->
-
+            <!-- Fim da lista de card de funcionario -->
         </section>
-        <!-- Fim da lista de fucionários -->
 
     </main>
 

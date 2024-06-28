@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do cliente</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../documentos-css/style.css">
@@ -15,19 +14,18 @@
 
 <body>
 
-    <?php include "../PHP-includes/header.php"?>
+    <?php include "../PHP-includes/header.php" ?>
 
     <main class="container my-5" style="max-width: 800px; margin: auto;">
 
         <div class="card mb-4 p-3">
             <h1 class="mb-4 text-center">Informações da Conta</h1>
             <div class="card-body text-center">
-                <img src="" class="img-thumbnail mb-3" style="width: 350px; height: 350px; object-fit: cover;"> <!-- Foto de perfil do cliente -->
-                <h3 class="mb-3"></h3> <!-- Nome do cliente -->
-                <p class="mb-1"><strong>E-mail:</strong></p> <!-- E-mail do cliente -->
-                <p class="mb-1"><strong>Data de Nascimento:</strong></p> <!-- Data de nascimento do cliente -->
-                <p class="mb-1"><strong>Assinatura:</strong></p> <!-- Assinatura do cliente -->
-                <p class="mb-1"><strong>Endereço:</strong></p> <!-- Endereço do cliente -->
+                <img src="" class="img-thumbnail mb-3" style="width: 350px; height: 350px; object-fit: cover;">
+                <h3 class="mb-3">Nome do Cliente</h3>
+                <p class="mb-1"><strong>E-mail:</strong></p>
+                <p class="mb-1"><strong>Data de Nascimento:</strong></p>
+                <p class="mb-1"><strong>Assinatura:</strong></p>
             </div>
             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-4">
                 <a href="#"><button class="btn mb-2 mx-2 mb-md-0">Adicionar endereço</button></a>
@@ -43,7 +41,7 @@
 
     </main>
 
-    <?php include "../PHP-includes/footer.php"?>
+    <?php include "../PHP-includes/footer.php" ?>
 
 </body>
 

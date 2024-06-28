@@ -29,7 +29,7 @@ body{
 
 @media (max-width:524px){
     .item-carrinho{
-        background-color: whitesmoke;
+        background-color: var(--corNova1);
         padding: 5px;
         display: flex;
         flex-wrap: wrap;
@@ -49,11 +49,19 @@ body{
 
 @media (min-width:525px){
     .item-carrinho{
-        background-color: whitesmoke;
+        background-color: var(--corNova1);
         padding: 5px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+}
+
+.card{
+    background-color: var(--corNova1);
+}
+
+.card-bory{
+    border-radius: 30px;
 }
