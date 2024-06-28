@@ -20,9 +20,11 @@ $listCarrinho = $carrinhoDao->readById($carrinho_id);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="../documentos-css/carrinho.css">
-  <link rel="stylesheet" href="../documentos-css/style.css">
+  <link rel="shortcut icon" href="public/icones/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="public/documentos-css/carrinho.css">
+  <link rel="stylesheet" href="public/documentos-css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="public/js/carrinho.js"></script>
 
 <body>
 
@@ -91,10 +93,9 @@ $listCarrinho = $carrinhoDao->readById($carrinho_id);
     <!-- Botões de Ação -->
     <div class="d-flex justify-content-between">
       <button class="btn btn-danger">Cancelar Compra</button>
-      <form action="finalizaCompra" method="post">
-        <input type="hidden" name="identificador" value="<?php echo session_id(); ?>">
-        <button type="submit" class="btn btn-success">Confirmar Pagamento</button>
-      </form>
+      
+        <button type="submit" class="btn btn-success" id="confirmar">Confirmar Pagamento</button>
+      
     </div>
     <!-- Fim dos Botões de Ação -->
 

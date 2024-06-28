@@ -160,84 +160,87 @@
 
     <hr>
 
-    <!-- PLANOS -->
-    <section class="container my-4">
-      <h2 class="text-center mb-4">Conheça nossos planos</h2>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="sessao sessao_planos">
+            <section class="container">
+                <h2 class="text-center mb-4">Conheça nossos planos</h2>
+                <div class="row row-cols-1 row-cols-md-3 text-center">
 
-        <div class="col mb-4">
-          <div class="card rounded-3 shadow-sm">
-            <div class="card-header py-3 header-tradicional">
-              <h4 class="my-0 fw-normal">Tradicional</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$0<small class="text-muted fw-light">/mês</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Acesso a todos os itens do catálogo</li>
-                <li>Frete grátis a partir de R$100,00</li>
-                <li>Concorra a sorteios todos os meses</li>
-              </ul>
-              <button type="button" class="w-100 btn btn-lg btn-tradicional">Cadastrar</button>
-            </div>
-          </div>
+                    <div class="col mb-4">
+                        <div class="card rounded-3 shadow-sm">
+                            <div class="card-header py-3 header-tradicional">
+                                <h4 class="my-0 fw-normal">Tradicional</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">R$0<small
+                                        class="text-muted fw-light">/mês</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Acesso a todos os itens do catálogo</li>
+                                    <li>Frete grátis a partir de R$100,00</li>
+                                    <li>Concorra a sorteios todos os meses</li>
+                                </ul>
+                                <button type="button" class="w-100 btn btn-lg btn-tradicional">Cadastrar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-4">
+                        <div class="card rounded-3 shadow-sm">
+                            <div class="card-header py-3 header-premium">
+                                <h4 class="my-0 fw-normal">Premium</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">R$15<small
+                                        class="text-muted fw-light">/mês</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>10% de desconto em toda a loja</li>
+                                    <li>Frete grátis a partir de R$50,00.</li>
+                                    <li>Brinde na primeira compra</li>
+                                </ul>
+                                <button type="button" class="w-100 btn btn-lg btn-premium">Assinar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-4">
+                        <div class="card rounded-3 shadow-sm">
+                            <div class="card-header py-3 header-gourmet">
+                                <h4 class="my-0 fw-normal">Gourmet</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">R$29<small
+                                        class="text-muted fw-light">/mês</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>15% de desconto em toda a loja</li>
+                                    <li>Frete grátis em todas as suas compras</li>
+                                    <li>Receba pacotes mensalmente</li>
+                                </ul>
+                                <button type="button" class="w-100 btn btn-lg btn-gourmet">Assinar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-center background-footer">
+
+        <section class="container p-4 pb-0">
+            <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
+            <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
+            <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
+        </section>
+
+        <div class="p-3">
+            UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
         </div>
 
-        <div class="col mb-4">
-          <div class="card rounded-3 shadow-sm">
-            <div class="card-header py-3 header-premium">
-              <h4 class="my-0 fw-normal">Premium</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$15<small class="text-muted fw-light">/mês</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>10% de desconto em toda a loja</li>
-                <li>Frete grátis a partir de R$50,00</li>
-                <li>Brinde na primeira compra</li>
-              </ul>
-              <button type="button" class="w-100 btn btn-lg btn-premium">Assinar</button>
-            </div>
-          </div>
-        </div>
+    </footer>
 
-        <div class="col mb-4">
-          <div class="card rounded-3 shadow-sm">
-            <div class="card-header py-3 header-gourmet">
-              <h4 class="my-0 fw-normal">Gourmet</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$29<small class="text-muted fw-light">/mês</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>15% de desconto em toda a loja</li>
-                <li>Frete grátis em todas as suas compras</li>
-                <li>Receba pacotes mensalmente em casa</li>
-              </ul>
-              <button type="button" class="w-100 btn btn-lg btn-gourmet">Assinar</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="text-center background-footer">
-
-    <section class="container p-4 pb-0">
-      <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
-      <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
-      <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
-    </section>
-
-    <div class="p-3">
-      UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
-    </div>
-
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>

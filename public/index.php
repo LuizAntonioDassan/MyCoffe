@@ -34,6 +34,12 @@ switch ($request) {
     case '/carrinho':
         require $baseDir . '/documentos-html/carrinho.php';
         break;
+    case '/confirmarPedido':
+        require $baseDir . '/documentos-html/confirmarPedido.php';
+        break;
+    case '/adicionarEndereco':
+        require $baseDir . '/documentos-html/adicionarEndereco.php';
+        break;
     //Listagens Visao Funcionario
     case '/listaProdutos':
         require $baseDir . '/documentos-html/listaDeProdutos.php';
@@ -73,6 +79,9 @@ switch ($request) {
     //Controladores
     case '/createSimplifiedUser':
         require 'controller/createSimplifiedUser.php';
+        break;
+    case '/salvaEndereco':
+        require 'controller/salvarEndereco.php';
         break;
     case '/editCliente':
         require 'controller/editCliente.php';

@@ -13,7 +13,7 @@ class CompraDAO {
     }
 
     public function create(Compra $compra) {
-        $query = "INSERT INTO {$this->table_name} (identificador, data, cliente_rg) VALUES ($1, $2, $3)";
+        $query = "INSERT INTO {$this->table_name} (identificador, data, cpfCliente) VALUES ($1, $2, $3)";
         $result = pg_query_params($this->conn, $query, array($compra->identificador, $compra->data, $compra->cliente_id));
         
         if ($result) {
@@ -30,7 +30,7 @@ class CompraDAO {
         if ($result) {
             $compras = [];
             while ($row = pg_fetch_assoc($result)) {
-                $compras[] = new Compra($row['identificador'], $row['data'], $row['cliente_rg']);
+                $compras[] = new Compra($row['identificador'], $row['data'], $row['cpfCliente']);
             }
             return $compras;
         } else {
@@ -45,7 +45,7 @@ class CompraDAO {
         if ($result) {
             $row = pg_fetch_assoc($result);
             if ($row) {
-                return new Compra($row['identificador'], $row['data'], $row['cliente_rg']);
+                return new Compra($row['identificador'], $row['data'], $row['cpfCliente']);
             } else {
                 return null;
             }
@@ -55,7 +55,7 @@ class CompraDAO {
     }
 
     public function update(Compra $compra) {
-        $query = "UPDATE {$this->table_name} SET cliente_rg = $1, data = $2 WHERE identificador = $3";
+        $query = "UPDATE {$this->table_name} SET cpfCliente = $1, data = $2 WHERE identificador = $3";
         $result = pg_query_params($this->conn, $query, array($compra->cliente_id, $compra->data, $compra->identificador));
 
         if ($result) {

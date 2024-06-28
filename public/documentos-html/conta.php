@@ -31,7 +31,7 @@
         </div>
       
         <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-4">
-            <button class="btn mb-2 mx-2 mb-md-0">Editar Endereço</button>
+            <button class="btn mb-2 mx-2 mb-md-0" id="btnEndereco">Editar Endereço</button>
             <button class="btn mb-2 mx-2 mb-md-0" id="btnEditar">Editar Dados</button>
         </div>
         

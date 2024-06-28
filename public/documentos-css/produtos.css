@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
-.botao-comprar-produtos{
-    background-color: var(--cor5);
-    color: var(--cor1);
+.botao-comprar-produto{
+    background-color: darkgreen;
+    color: white;
     font-weight: 600;
 }
 
 .teste{
     margin: 0px;
+}
+
+body{
+    background-image: linear-gradient(90deg , var(--cor2) , var(--cor4));
 }

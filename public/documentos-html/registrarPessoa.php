@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../documentos-css/formulario.css">
     <link rel="stylesheet" href="../documentos-css/style.css">
+</head>
 
 <body>
 
@@ -77,10 +78,6 @@
                                     <div class="mb-3">
                                         <label for="data-nascimento" class="form-label">Data de nascimento</label>
                                         <input type="date" class="form-control" id="data-nascimento">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="foto-perfil" class="form-label">Foto de perfil</label>
-                                        <input type="file" class="form-control" id="foto-perfil">
                                     </div>
                                     <button type="submit" class="btn botao-cadastrar w-100">Salvar alterações</button>
                                 </form>

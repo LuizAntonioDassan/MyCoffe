@@ -3,16 +3,33 @@ include_once './model/conn/Database.php';
 include_once './model/api/compraAPI.php';
 include_once './model/DAO/CompraDAO.php';
 
-if(!isset($_SESSION['$cpf']))
+
+function finalizaCompra(){
+    $identificador = $_POST['identificador'];
+    $data = date('Y-m-d');
+
+    $compra = new Compra($data, $_SESSION['rg'], $identificador);
+    $compraDAO = new CompraDAO();
+
+    try{
+        if($compraDAO->create($compra)){
+            return "Compra Criada: ID -" . $identificador;
+        }
+    }catch(Exception $e){
+        echo 'erro: '. $e->getMessage();
+    }
+    
+}
+
+
+if(!isset($_SESSION['cpf']))
 {
     header('location: /conta');
 }
 
-$identificador = $_POST['identificador'];
-$data = date('Y-m-d');
-
-$compra = new Compra($data, $cliente_rg, $identificador);
-$compraDAO = new CompraDAO();
+finalizaCompra();
+session_regenerate_id();
 
 
+header('location: /produtos');
 ?>

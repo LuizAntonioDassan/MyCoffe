@@ -23,6 +23,7 @@ $funcionario = $funcionarioDao->readById($id);
     <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../documentos-css/formulario.css">
     <link rel="stylesheet" href="../documentos-css/style.css">
+</head>
 
 <body>
 
@@ -86,23 +87,23 @@ $funcionario = $funcionarioDao->readById($id);
         </main>
 
 
-        <footer class="text-center background-footer">
+    <footer class="text-center background-footer">
 
-            <section class="container p-4 pb-0">
-                <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
-                <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
-                <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
-            </section>
+        <section class="container p-4 pb-0">
+            <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
+            <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
+            <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
+        </section>
 
-            <div class="p-3">
-                UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
-            </div>
+        <div class="p-3">
+            UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
+        </div>
 
-        </footer>
+    </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-            </script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
 
 </html>

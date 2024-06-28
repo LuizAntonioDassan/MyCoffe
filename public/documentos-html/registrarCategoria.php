@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar categoria</title>
+    <title>Registrar categoria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../documentos-css/formulario.css">
     <link rel="stylesheet" href="../documentos-css/style.css">
+</head>
 
 <body>
 
@@ -33,7 +34,7 @@
                                     <label for="imagem-categoria" class="form-label">Imagem</label>
                                     <input type="file" class="form-control" id="imagem-categoria">
                                 </div>
-                                <button type="submit" class="btn botao-cadastrar w-100">Criar categoria</button>
+                                <button type="submit" class="btn w-100">Criar categoria</button>
                             </form>
                         </div>
                     </div>

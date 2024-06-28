@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
 .btn-gourmet , .btn-gourmet:hover , .header-gourmet{
     background-color: var(--cor5);
     color: var(--cor1);
@@ -36,3 +40,59 @@
     font-weight: 600;
     font-size: 1.5rem; /* Aumente o valor conforme necessário */
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 767px) {
+    body {
+        background-color: lightblue;
+        color: white;
+    }
+    .sessao{
+        margin-top: 0px;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    body{
+        color: white;
+    }
+    .sessao{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .sessao_produtos{
+        padding-top: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-img-top{
+        max-height: 250px;
+        max-width: 280px;
+    }
+    .sessao_produtos .card{
+        max-width: 280px;
+        margin: auto;
+    }
+    
+}
+
+.sessao_bemVindo{
+    background-image: linear-gradient(45deg , var(--cor2) , var(--cor4));
+}
+.sessao_sobreNos{
+    background-image: linear-gradient(45deg , var(--cor5) , var(--cor3));
+}
+.sessao_produtos{
+    background-image: linear-gradient(90deg , var(--cor4) , var(--cor2));
+}
+.sessao_planos{
+    background-image: linear-gradient(180deg , var(--cor5) , var(--cor2));
+}
+
+/* CARDS */
+
