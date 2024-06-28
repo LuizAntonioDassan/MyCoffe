@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php include "../PHP-includes/header.php" ?>
+    <?php include "navbar.php" ?>
 
     <main>
         <!-- TEXTO DE BEM-VINDO E FORMULÁRIO -->
@@ -73,7 +73,7 @@
                     </div>
                     <!-- Lista de card de categorias -->
 
-                    <?php include "../PHP-includes/cardCategoria.php" ?> <!-- Card de categoria -->
+                    <?php include "cardCategoria.php" ?> <!-- Card de categoria -->
 
                     <!-- Fim de lista de card de categorias -->
                 </div>
@@ -141,7 +141,7 @@
         </div>
     </main>
 
-    <?php include "../PHP-includes/footer.php" ?>
+    <?php include "footer.php" ?>
 </body>
 
 </html>

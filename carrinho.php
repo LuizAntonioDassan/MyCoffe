@@ -14,12 +14,12 @@
 
 <body>
 
-  <?php include "../PHP-includes/header.php" ?>
+  <?php include "navbar.php" ?>
 
   <main class="container my-5" style="max-width: 800px; margin: auto;">
 
     <!-- Lista de produtos -->
-    <?php include "../PHP-includes/itemCarrinho.php"?>
+    <?php include "itemCarrinho.php"?>
     <!-- Fim da Lista de Produtos -->
 
     <!-- Resumo do Pedido -->
@@ -53,7 +53,7 @@
     <!-- Fim dos Botões de Ação -->
   </main>
 
-  <?php include "../PHP-includes/footer.php" ?>
+  <?php include "footer.php" ?>
 
 </body>
 

@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php include "../PHP-includes/header.php" ?>
+    <?php include "navbar.php" ?>
 
     <main class="container my-5" style="max-width: 800px; margin: auto;">
 
@@ -46,7 +46,7 @@
 
     </main>
 
-    <?php include "../PHP-includes/footer.php" ?>
+    <?php include "footer.php" ?>
 
 </body>
 

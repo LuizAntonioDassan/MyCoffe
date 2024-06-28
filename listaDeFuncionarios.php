@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php include "../PHP-includes/header.php" ?>
+    <?php include "navbar.php" ?>
 
     <main class="container">
         <!-- Seção de ordenação e busca -->
@@ -43,13 +43,13 @@
         <!-- Lista de funcionarios -->
         <section class="row">
             <!-- Lista de card de funcionarios -->
-            <?php include "../PHP-includes/cardListaDeFuncionarios.php" ?>
+            <?php include "cardListaDeFuncionarios.php" ?>
             <!-- Fim da lista de card de funcionario -->
         </section>
 
     </main>
 
-    <?php include "../PHP-includes/footer.php" ?>
+    <?php include "footer.php" ?>
 
 </body>
 

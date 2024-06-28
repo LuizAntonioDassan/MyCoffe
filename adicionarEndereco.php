@@ -59,7 +59,7 @@
 
     <?php include "footer.php" ?>
 
-    <script src="../documentos-js/adicionarEndereco.js"></script>
+    <script src="js/adicionarEndereco.js"></script>
 
 </body>
 

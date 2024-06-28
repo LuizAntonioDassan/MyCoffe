@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php include "../PHP-includes/header.php" ?>
+    <?php include "navbar.php" ?>
 
     <main class="container">
         <!-- Seção de ordenação e busca -->
@@ -43,13 +43,13 @@
         <!-- Lista de categorias -->
         <section class="row">
             <!-- Lista de cards de categorias -->
-            <?php include "../PHP-includes/cardListaDeCategorias.php"?>
+            <?php include "cardListaDeCategorias.php"?>
             <!-- Fim de lista de card de categorias -->
         </section>
 
     </main>
 
-    <?php include "../PHP-includes/footer.php" ?>
+    <?php include "footer.php" ?>
 
 </body>
 

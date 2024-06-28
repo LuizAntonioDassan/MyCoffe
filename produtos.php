@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php include "../PHP-includes/header.php" ?>
+    <?php include "navbar.php" ?>
 
     <main>
 
@@ -47,7 +47,7 @@
             <div class="row">
 
                 <!-- Lista de card de produtos da loja -->
-                 <?php include "../PHP-includes/cardProdutos.php"?>
+                 <?php include "cardProdutos.php"?>
                 <!-- Fim da lista de card de produtos da loja -->
 
             </div>
@@ -55,7 +55,7 @@
 
     </main>
 
-    <?php include "../PHP-includes/footer.php" ?>
+    <?php include "footer.php" ?>
 
 </body>
 
