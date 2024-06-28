@@ -2,7 +2,7 @@
 
 .botao-comprar-produto{
     background-color: darkgreen;
-    color: white;
+    color: whitesmoke;
     font-weight: 600;
 }
 
@@ -11,5 +11,5 @@
 }
 
 body{
-    background-image: linear-gradient(90deg , var(--cor2) , var(--cor4));
+    background-image: linear-gradient(90deg , var(--corNova2) , var(--corNova3)); /* ---------- TESTAR COR ----------- */
 }
