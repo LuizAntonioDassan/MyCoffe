@@ -63,14 +63,9 @@
                             <strong>Permisão:</strong> <?php echo $funcionario->getCargo();?>
                         </p>
                         <div class="d-flex justify-content-between">
-<<<<<<< HEAD:public/documentos-html/listaDeFuncionarios.php
                             <button class="btn btn-primary">
                                 <a href="editarFuncionario?id=<?php echo $funcionario->getId(); ?>" class="btn btn-primary">Editar</a>
                             </button>
-=======
-                            <a href="#"><button class="btn btn-primary">Editar</button></a>
-                            <button class="btn btn-danger">Excluir</button>
->>>>>>> dev:documentos-html/listaDeFuncionarios.html
                         </div>
                     </div>
                 </div>

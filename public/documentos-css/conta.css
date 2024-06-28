@@ -26,19 +26,24 @@ main .btn:hover{
 }
 
 body{
-    background-color: var(--cor1);
+    background-image: linear-gradient(90deg , var(--corNova2) , var(--corNova3)); 
+}
+
+.card{
+    background-color: var(--corNova1);
 }
 
 main .btn{
-    background-color: var(--cor5);
-    color: white;
+    background-color: black; 
+    color: whitesmoke;
     width: 300px;
 }
 
 main .btn:hover{
-    background-color: var(--cor5);
-    color: white;
+    background-color: var(--corNova4);
+    color: whitesmoke;
 }
+
 
 body{
     background-image: linear-gradient(90deg , var(--cor2) , var(--cor4));

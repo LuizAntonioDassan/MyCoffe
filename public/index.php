@@ -41,6 +41,9 @@ switch ($request) {
         require $baseDir . '/documentos-html/adicionarEndereco.php';
         break;
     //Listagens Visao Funcionario
+    case '/perfilFuncionario':
+        require $baseDir . '/documentos-html/perfilFuncionario.php';
+        break;
     case '/listaProdutos':
         require $baseDir . '/documentos-html/listaDeProdutos.php';
         break;

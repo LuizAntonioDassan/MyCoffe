@@ -43,21 +43,21 @@
               </li>-->
               <li class="nav-item">
                 <a class="nav-link" href="produtos">Produtos</a>
-              </li>
-              <!--
+              </li>            
               <li class="nav-item">
-                <a class="nav-link" href="carrinho.php">Carrinho</a>
-              </li> -->
-              <li class="nav-item">
-                <a class="nav-link" href="conta">Minha conta</a>
-              </li>
-            <?php } ?>
-            <?php
-            if (isset($_SESSION['Administrador'])) {
-              ?>
-              <li class="nav-item">
-                <a class="nav-link" href="cadastroProduto">CadastrarProduto</a>
-              </li>
+                <a class="nav-link" href="carrinho">Carrinho</a>
+              </li> 
+                <?php
+                if (isset($_SESSION['idcargo']) && $_SESSION['idcargo'] == 1) {
+                  ?>
+                  <li class="nav-item">
+                    <a class="nav-link" href="perfilFuncionario">Minha Conta</a>
+                  </li>
+                <?php }else{ ?>
+                  <li class="nav-item">
+                    <a class="nav-link" href="conta">Minha conta</a>
+                  </li>
+                <?php }?>
             <?php } ?>
 
             <?php
