@@ -58,6 +58,24 @@ $_SESSION['codigointerno'] = $produto->getCodigointerno();
                                         step="0.01" value="<?php echo $produto->getPreco();?>">
                                 </div>
                                 <div class="mb-3">
+                                    <label for="categoria" class="form-label">Categoria</label>
+                                    <select class="form-control" id="categoria" name="categoria">
+                                        <option value="">Selecione uma categoria</option>
+                                        <?php
+                                        include_once 'model/dao/categoriaDAO.php';
+                                        include_once 'model/conn/Database.php';
+                                        $database = new Database();
+                                        $db = $database->getConnection();
+                                        $categoriaDAO = new CategoriaDAO($db);
+                                        $categorias = $categoriaDAO->readAll();
+                                        foreach ($categorias as $categoria) {
+                                            echo "<option value='{$categoria->getNome()}'>{$categoria->getNome()}</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="descricao" class="form-label">Descricao</label>
                                     <textarea class="form-control" id="descricao" rows="3" name="descricao"
                                         placeholder="Digite a descrição do produto"><?php echo $produto->getDescricao();?></textarea>

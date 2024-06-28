@@ -73,29 +73,35 @@ $listCarrinho = $carrinhoDao->readById($carrinho_id);
       <div class="card-body">
         <h5 class="card-title">Resumo do Pedido</h5>
         <ul class="list-group list-group-flush">
+          <!--
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Subtotal <span>R$<?php if(isset($valorFinal)){echo $valorFinal;} ?></span>
+            Subtotal <span>R$<?php if (isset($valorFinal)) {
+              echo $valorFinal;
+            } ?></span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Frete <span>R$10,00</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Descontos <span>-R$5,00</span>
-          </li>
+          </li> -->
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            <strong>Total</strong> <strong>R$<?php if(isset($valorFinal)){echo $valorFinal;} ?></strong>
+            <strong>Total</strong> <strong>R$<?php if (isset($valorFinal)) {
+              $_SESSION['valorFinal'] = $valorFinal;
+              echo $valorFinal;
+            } ?></strong>
           </li>
         </ul>
       </div>
     </div>
     <!-- Fim do Resumo do Pedido -->
+    <div class="alert alert-warning d-none" id="alertMensagem" role="alert"></div>
 
     <!-- Botões de Ação -->
     <div class="d-flex justify-content-between">
       <button class="btn btn-danger">Cancelar Compra</button>
-      
-        <button type="submit" class="btn btn-success" id="confirmar">Confirmar Pagamento</button>
-      
+      <button type="submit" class="btn btn-success" id="confirmar">Confirmar Pagamento</button>
+
     </div>
     <!-- Fim dos Botões de Ação -->
 

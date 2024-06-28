@@ -3,11 +3,11 @@ include_once './model/api/produtoAPI.php';
 include_once './model/conn/Database.php';
 include_once './model/dao/produtoDAO.php';
 
-function atualizProduto($nome, $codigoBarras, $quantidade, $preco, $descricao, $codigoInterno){
+function atualizProduto($nome, $codigoBarras, $quantidade, $preco, $descricao, $codigoInterno, $categoria){
     $database = new Database();
     $db = $database->getConnection();
 
-    $produto = new Produto($nome,$preco,null,$codigoInterno,$codigoBarras,null,true,$quantidade,null,$descricao);
+    $produto = new Produto($nome,$preco,null,$codigoInterno,$codigoBarras,null,true,$quantidade,$categoria,$descricao);
     $produtoDao = new ProdutoDAO($db);
 
     /*if($imagem){
@@ -40,10 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantidade = $_POST['quantidade'];
     $preco = $_POST['preco'];
     $descricao = $_POST['descricao'];
+    $categoria = $_POST['categoria'];
     $codigoInterno = $_SESSION['codigointerno'];
     //$imagem = $_FILES['imagem']['tmp_name'];
 
-    atualizProduto($nome,$codigoBarras,$quantidade,$preco,$descricao, $codigoInterno);
+    atualizProduto($nome,$codigoBarras,$quantidade,$preco,$descricao, $codigoInterno, $categoria);
 
     if(isset($_POST['inativo'])){
         inativar($codigoBarras);

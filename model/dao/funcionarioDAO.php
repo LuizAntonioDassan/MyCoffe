@@ -13,8 +13,8 @@ class FuncionarioDAO {
     }
 
     public function create(Funcionario $funcionario) {
-        $query = "INSERT INTO {$this->table_funcionario} (email, cargo_id) VALUES ($1, $2)";
-        $result = pg_query_params($this->conn, $query, array($funcionario->email, $funcionario->cargo));
+        $query = "INSERT INTO {$this->table_funcionario} (email, cargo_id, id) VALUES ($1, $2, $3)";
+        $result = pg_query_params($this->conn, $query, array($funcionario->email, $funcionario->cargo, $funcionario->id));
         
         if ($result) {
             return true;

@@ -40,34 +40,82 @@
           <p>Funcionário</p>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2">
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-lg w-100" id="listaFuncionario">Lista de
-              funcionários</button>
+          <?php if (isset($_SESSION['idcargo']) && $_SESSION['idcargo'] == 1) { ?>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaFuncionario">Lista de
+                funcionários</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaCliente">Lista de clientes</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaProdutos">Lista de produtos</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaCategorias">Lista de categorias</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraFuncionario">Registrar
+                funcionário</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraCliente">Registrar cliente</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraProduto">Registrar produto</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraCategoria">Registrar
+                categoria</button>
+            </div>
           </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-lg w-100" id="listaCliente">Lista de clientes</button>
+        <?php } ?>
+        <?php if (isset($_SESSION['idcargo']) && $_SESSION['idcargo'] == 2) { ?>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaFuncionario">Lista de
+                funcionários</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaCliente">Lista de clientes</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaProdutos">Lista de produtos</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaCategorias">Lista de categorias</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraFuncionario">Registrar
+                funcionário</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraCliente">Registrar cliente</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraProduto">Registrar produto</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraCategoria">Registrar
+                categoria</button>
+            </div>
           </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-lg w-100" id="listaProdutos">Lista de produtos</button>
+        <?php } ?>
+        <?php if (isset($_SESSION['idcargo']) && $_SESSION['idcargo'] == 3) { ?>
+        <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaProdutos">Lista de produtos</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary btn-lg w-100" id="listaCategorias">Lista de categorias</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraProduto">Registrar produto</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraCategoria">Registrar
+                categoria</button>
+            </div>
           </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-lg w-100" id="listaCategorias">Lista de categorias</button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraFuncionario">Registrar
-              funcionário</button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraCliente">Registrar cliente</button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraProduto">Registrar produto</button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-secondary btn-lg w-100" id="cadastraCategoria">Registrar
-              categoria</button>
-          </div>
-        </div>
+        <?php } ?>
       </div>
     </div>
   </main>

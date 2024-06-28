@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php require_once('public/navbar.php');?>
+    <?php require_once ('public/navbar.php'); ?>
 
     <main>
         <div class="container">
@@ -23,31 +23,50 @@
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title text-center mb-4">Registro de Produto</h3>
-                            <form method="post" action="createProduct" id="registraProduto" enctype="multipart/form-data">
+                            <form method="post" action="createProduct" id="registraProduto"
+                                enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="nome-produto" class="form-label">Nome do produto</label>
                                     <input type="text" class="form-control" id="nome-produto"
-                                        placeholder="Digite o nome do produto" name="nome-produto">
+                                        placeholder="Digite o nome do produto" name="nome-produto" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="codigo-barras" class="form-label">Código de barras</label>
                                     <input type="text" class="form-control" id="codigo-barras"
-                                        placeholder="Digite o código de barras" name="codigo-barras">
+                                        placeholder="Digite o código de barras" name="codigo-barras" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="quantidade" class="form-label">Quantidade</label>
                                     <input type="number" class="form-control" id="quantidade"
-                                        placeholder="Digite a quantidade" name="quantidade">
+                                        placeholder="Digite a quantidade" name="quantidade" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="preco" class="form-label">Preço (R$)</label>
                                     <input type="number" class="form-control" id="preco" placeholder="Digite o preço"
-                                        step="0.01" name="preco">
+                                        step="0.01" name="preco" required>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="categoria" class="form-label">Categoria</label>
+                                    <select class="form-control" id="categoria" name="categoria" required>
+                                        <option value="">Selecione uma categoria</option>
+                                        <?php
+                                        include_once 'model/dao/categoriaDAO.php';
+                                        include_once 'model/conn/Database.php';
+                                        $database = new Database();
+                                        $db = $database->getConnection();
+                                        $categoriaDAO = new CategoriaDAO($db);
+                                        $categorias = $categoriaDAO->readAll();
+                                        foreach ($categorias as $categoria) {
+                                            echo "<option value='{$categoria->getNome()}'>{$categoria->getNome()}</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+
                                 <div class="mb-3">
                                     <label for="descricao" class="form-label">Descrição</label>
                                     <textarea class="form-control" id="descricao" rows="3"
-                                        placeholder="Digite a descrição do produto" name="descricao"></textarea>
+                                        placeholder="Digite a descrição do produto" name="descricao" required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="imagem-produto" class="form-label">Imagem</label>

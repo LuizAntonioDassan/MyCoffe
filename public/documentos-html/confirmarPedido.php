@@ -14,45 +14,14 @@
 </head>
 
 <body>
-  <header>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg custom-navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">MyCoffee</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Produtos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Carrinho</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Minha conta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Entrar/Sair</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
+  <?php require_once('public/navbar.php');?>
   <main class="container my-5" style="max-width: 800px; margin: auto;">
 
     <div class="card mb-4 p-3">
         <h2 class="text-center">Informações de pagamento e entrega</h2>
 
         <h3 class="mt-3">Valor total:</h3>
-        <span>R$ <?php echo session_id();?></span>
+        <span>R$ <?php echo $_SESSION['valorFinal'];?></span>
 
         <h3 class="mt-3">Endereço de entrega:</h3>
         <span>Endereço</span>
@@ -71,7 +40,7 @@
     </div>
     <form action="finalizaCompra" method="post">
         <input type="hidden" name="identificador" value="<?php echo session_id(); ?>">
-        <button type="submit" class="btn btn-success">Confirmar Pagamento</button>
+        <button type="submit" class="btn btn-success" id="btnFinalizar">Confirmar Pagamento</button>
       </form>
 
   </main>

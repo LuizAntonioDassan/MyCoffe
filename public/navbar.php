@@ -48,7 +48,7 @@
                 <a class="nav-link" href="carrinho">Carrinho</a>
               </li> 
                 <?php
-                if (isset($_SESSION['idcargo']) && $_SESSION['idcargo'] == 1) {
+                if (isset($_SESSION['idcargo'])) {
                   ?>
                   <li class="nav-item">
                     <a class="nav-link" href="perfilFuncionario">Minha Conta</a>
@@ -56,6 +56,7 @@
                 <?php }else{ ?>
                   <li class="nav-item">
                     <a class="nav-link" href="conta">Minha conta</a>
+                    <a class="nav-link" href="conta"><?php echo $_SESSION['idcargo'];?></a>
                   </li>
                 <?php }?>
             <?php } ?>

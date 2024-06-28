@@ -93,8 +93,10 @@ class UsuarioDAO {
         if ($result) {
             $row = pg_fetch_assoc($result);
             if ($row) {
-                return new Usuario($row['id'], $row['nome'], $row['email'], $row['senha']);
-            } else {
+                $usuario = new Usuario($row['nome'], $row['email'], $row['senha']);
+                $usuario->setId($row['id']);
+                return $usuario;
+            } else { 
                 return null;
             }
         } else {

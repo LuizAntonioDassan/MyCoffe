@@ -38,11 +38,12 @@ function createFuncionario($nome,$email, $permissao){
     $recuperaUsuarioNovo = $usuarioDao->readByEmail($email);
 
     $funcionario = new Funcionario($nome,$email, $permissao);
+    $funcionario->setId($recuperaUsuarioNovo->getId());
     $funcionarioDao = new FuncionarioDAO($db);
 
     try{
         if($funcionarioDao->create($funcionario)){
-            return "Funcionario Criado";
+            return "Funcionario Criado: " . $funcionario->getId();
         }
     }catch(Exception $e){
         echo 'Erro: '. $e->getMessage();
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado2 = createFuncionario($nome,$email, $permissao);
 
     if($resultado && $resultado2){
-        header("Location: /");
+        header("Location: /conta");
         exit();
     }
 }

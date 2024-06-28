@@ -1,4 +1,7 @@
 <?php
+if($_SESSION['idcargo'] != 1 || $_SESSION['idcargo'] != 2){
+  header('location: /perfilFuncionario');
+}
 
 include_once './model/dao/funcionarioDAO.php';
 include_once './model/conn/Database.php';

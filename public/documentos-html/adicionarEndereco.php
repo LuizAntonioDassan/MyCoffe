@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <?php require_once('public/navbar.php');?>
     <main>
         <div class="container">
             <div class="row justify-content-center mt-5">

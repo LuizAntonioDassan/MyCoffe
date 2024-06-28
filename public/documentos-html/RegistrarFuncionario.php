@@ -1,3 +1,8 @@
+<?php 
+if($_SESSION['idcargo'] != 1 || $_SESSION['idcargo'] != 2){
+  header('location: /perfilFuncionario');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,15 +47,19 @@
                                             placeholder="Digite a senha" name="senha">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Gênero</label>
-                                    </div>
-                                    <div class="mb-3">
                                         <label class="form-label">Permissão</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="permissao" id="masculino"
+                                                value="3">
+                                            <label class="form-check-label" for="masculino">
+                                                Funcionário
+                                            </label>
+                                        </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="permissao" id="masculino"
                                                 value="2">
                                             <label class="form-check-label" for="masculino">
-                                                Funcionário
+                                                Gerente
                                             </label>
                                         </div>
                                         <div class="form-check">

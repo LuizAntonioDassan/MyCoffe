@@ -83,6 +83,9 @@ switch ($request) {
     case '/createSimplifiedUser':
         require 'controller/createSimplifiedUser.php';
         break;
+    case '/verifySessionCpf':
+        require 'controller/verifySessionCpf.php';
+        break;
     case '/salvaEndereco':
         require 'controller/salvarEndereco.php';
         break;
