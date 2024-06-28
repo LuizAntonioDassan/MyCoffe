@@ -64,7 +64,7 @@
                             <strong>Assinatura:</strong> Sim
                         </p>
                         <div class="d-flex justify-content-between">
-                            <button class="btn btn-primary">Editar</button>
+                            <a href="#"><button class="btn btn-primary">Editar</button></a>
                             <button class="btn btn-danger">Excluir</button>
                         </div>
                     </div>

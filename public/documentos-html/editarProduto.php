@@ -85,8 +85,6 @@ $_SESSION['codigointerno'] = $produto->getCodigointerno();
         </div>
     </main>
 
-
-
     <footer class="text-center background-footer">
 
         <section class="container p-4 pb-0">

@@ -4,30 +4,30 @@ body{
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-.btn-gourmet , .btn-gourmet:hover , .header-gourmet{
-    background-color: var(--cor5);
-    color: var(--cor1);
+.btn-tradicional , .btn-tradicional:hover , .header-tradicional{
+    background-color: #DF813B;
+    color: black;
     font-size: 1.5em;
     font-weight: 500;
 }
 
 .btn-premium , .btn-premium:hover , .header-premium{
-    background-color: var(--cor2);
-    color: var(--cor6);
+    background-color: #451D13;
+    color: whitesmoke;
     font-size: 1.5em;
     font-weight: 500;
 }
 
-.btn-tradicional , .btn-tradicional:hover , .header-tradicional{
-    background-color: var(--cor4);
-    color: var(--cor6);
+.btn-gourmet , .btn-gourmet:hover , .header-gourmet{
+    background-color: #B46546;
+    color: whitesmoke;
     font-size: 1.5em;
     font-weight: 500;
 }
 
 .botao-cadastar-home , .botao-cadastar-home:hover{
-    background-color: var(--cor5);
-    color: var(--cor1);
+    background-color: var(--corNova4);
+    color: whitesmoke;
     font-size: 1.4em;
     font-weight: 400;
 
@@ -45,8 +45,7 @@ body{
 
 @media (max-width: 767px) {
     body {
-        background-color: lightblue;
-        color: white;
+        color: whitesmoke;
     }
     .sessao{
         margin-top: 0px;
@@ -57,7 +56,7 @@ body{
 
 @media (min-width: 768px) {
     body{
-        color: white;
+        color: whitesmoke;
     }
     .sessao{
         min-height: 100vh;
@@ -81,18 +80,44 @@ body{
     
 }
 
+@media (min-width: 1600px){
+    .textoBemVindo{
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    .textoSobreNos{
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+}
+
 .sessao_bemVindo{
-    background-image: linear-gradient(45deg , var(--cor2) , var(--cor4));
+    /* background-image: linear-gradient(90deg , var(--corNova2) , var(--corNova3)); */
+    background-image: url(../imagens/pagina-principal/imagem-fundo-2.jpg);
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    text-align: justify;
 }
 .sessao_sobreNos{
-    background-image: linear-gradient(45deg , var(--cor5) , var(--cor3));
+    background-image: url(../imagens/pagina-principal/imagem-fundo-3.jpg);
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    text-align: justify;
 }
 .sessao_produtos{
-    background-image: linear-gradient(90deg , var(--cor4) , var(--cor2));
+    background-image: url(../imagens/pagina-principal/imagem-fundo-1.jpg);
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
 }
 .sessao_planos{
-    background-image: linear-gradient(180deg , var(--cor5) , var(--cor2));
-}
+    background-image: url(../imagens/pagina-principal/imagem-fundo-4.jpg);
+    background-size: cover;
+    background-position: left;
+    background-attachment: fixed;
+} 
 
 /* CARDS */
 

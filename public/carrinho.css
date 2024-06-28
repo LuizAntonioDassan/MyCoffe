@@ -10,7 +10,7 @@ input.form-control.text-center {
 }
 
 body{
-    background-image: linear-gradient(90deg , var(--cor2) , var(--cor4));
+    background-image: linear-gradient(90deg , var(--corNova2) , var(--corNova3));
 }
 
 .nome-quantidade-carrinho{
@@ -29,7 +29,7 @@ body{
 
 @media (max-width:524px){
     .item-carrinho{
-        background-color: white;
+        background-color: var(--corNova1);
         padding: 5px;
         display: flex;
         flex-wrap: wrap;
@@ -49,11 +49,19 @@ body{
 
 @media (min-width:525px){
     .item-carrinho{
-        background-color: white;
+        background-color: var(--corNova1);
         padding: 5px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+}
+
+.card{
+    background-color: var(--corNova1);
+}
+
+.card-bory{
+    border-radius: 30px;
 }

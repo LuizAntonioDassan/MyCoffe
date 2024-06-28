@@ -17,7 +17,6 @@
 
 <body>
     <main>
-
         <div class="container">
             <div class="row justify-content-center mt-5">
                 <div class="col-md-6">
@@ -56,7 +55,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer class="text-center background-footer">
