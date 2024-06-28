@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php include "../PHP-includes/header.php" ?>
+    <?php include "navbar.php" ?>
 
     <main>
         <div class="container">
@@ -57,7 +57,7 @@
         </div>
     </main>
 
-    <?php include "../PHP-includes/footer.php" ?>
+    <?php include "footer.php" ?>
 
     <script src="../documentos-js/adicionarEndereco.js"></script>
 
