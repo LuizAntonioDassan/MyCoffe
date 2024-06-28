@@ -40,6 +40,8 @@
             </div>
         </section>
 
+        <a href="#"><button class="botao-adicionar-categoria">Adicionar categoria</button></a>
+
         <!-- Lista de categorias -->
         <section class="row">
             <!-- Lista de cards de categorias -->

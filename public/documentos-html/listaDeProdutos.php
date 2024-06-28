@@ -45,6 +45,8 @@
             </div>
         </section>
 
+        <a href="#"><button class="botao-registrar-produto">Adicionar produto</button></a>
+
         <!-- Lista de produtos -->
         <section class="row">
             <!-- Lista de card de produtos -->

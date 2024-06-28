@@ -40,6 +40,8 @@
             </div>
         </section>
 
+        <a href="#"><button class="botao-registrar-funcionario">Adicionar funcionário</button></a>
+
         <!-- Lista de funcionarios -->
         <section class="row">
             <!-- Lista de card de funcionarios -->

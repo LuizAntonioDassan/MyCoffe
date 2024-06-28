@@ -12,3 +12,17 @@ body{
 .card{
   background-color: var(--corNova1);
 }
+
+.botao-adicionar-categoria,
+.botao-registrar-produto,
+.botao-registrar-cliente,
+.botao-registrar-funcionario{
+  background-color: darkgreen;
+  color: whitesmoke;
+  font-size: 1.2em;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  margin-bottom: 12px;
+}

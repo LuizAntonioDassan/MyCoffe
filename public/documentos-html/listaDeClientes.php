@@ -41,6 +41,8 @@
             </div>
         </section>
 
+        <a href="#"><button class="botao-registrar-cliente">Adicionar cliente</button></a>
+
         <!-- Lista de clientes -->
         <section class="row">
             <!-- Lista de card de cliente -->
