@@ -56,6 +56,12 @@ switch ($request) {
     case '/listaFuncionario':
         require $baseDir . '/documentos-html/listaDeFuncionarios.php';
         break;
+    case '/relatorios':
+        require $baseDir . '/documentos-html/relatorios.php';
+        break;
+    case '/relatorioVendas':
+        require $baseDir . '/documentos-html/relatorioVendas.php';
+        break;
     //Cadastros
     case '/cadastraCategoria':
         require $baseDir . '/documentos-html/registrarCategoria.php';
@@ -85,6 +91,12 @@ switch ($request) {
         break;
     case '/verifySessionCpf':
         require 'controller/verifySessionCpf.php';
+        break;
+    case '/getRelatorios.php':
+        require 'controller/getRelatorios.php';
+        break;
+    case '/getRelatoriosVendas':
+        require 'controller/getRelatoriosVenda.php';
         break;
     case '/salvaEndereco':
         require 'controller/salvarEndereco.php';

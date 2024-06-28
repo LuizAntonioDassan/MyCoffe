@@ -56,7 +56,6 @@
                 <?php }else{ ?>
                   <li class="nav-item">
                     <a class="nav-link" href="conta">Minha conta</a>
-                    <a class="nav-link" href="conta"><?php echo $_SESSION['idcargo'];?></a>
                   </li>
                 <?php }?>
             <?php } ?>

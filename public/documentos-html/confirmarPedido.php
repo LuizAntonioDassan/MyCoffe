@@ -25,6 +25,10 @@
 
         <h3 class="mt-3">Endereço de entrega:</h3>
         <span>Endereço</span>
+        <span>Rua: <?php echo $_SESSION['rua'];?></span>
+        <span>Bairro: <?php echo $_SESSION['bairro'];?></span>
+        <span>Numero: <?php echo $_SESSION['numero'];?></span>
+        <span>CEP: <?php echo $_SESSION['cep'];?></span>
 
         <h3 class="mt-3">Selecione o método de pagamento</h3>
         <form>

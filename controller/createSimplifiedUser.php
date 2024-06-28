@@ -32,7 +32,9 @@ function prepareSession($email){
     $usuarioDao = new UsuarioDAO($db);
     $usuario = $usuarioDao->readByEmail($email);
 
-    $_SESSION['idUsuario'] = $usuario->id;
+    $_SESSION['idUsuario'] = $usuario->getId();
+    $_SESSION['nome'] = $usuario->getNome();
+    $_SESSION['email'] = $usuario->getEmail();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
