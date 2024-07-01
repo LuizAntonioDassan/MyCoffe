@@ -1,5 +1,5 @@
 <?php 
-if($_SESSION['idcargo'] != 1 || $_SESSION['idcargo'] != 2){
+if($_SESSION['idcargo'] == 3){
   header('location: /perfilFuncionario');
 }
 ?>

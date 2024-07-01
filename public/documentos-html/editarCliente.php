@@ -60,7 +60,11 @@
                                         <label for="senha" class="form-label">Senha</label>
                                         <input type="password" class="form-control" id="senha"
                                             placeholder="Digite a senha">
-                                    </div>                        
+                                    </div>      
+                                    <div class="mb-3">
+                                        <label for="imagem" class="form-label">Imagem de Perfil</label>
+                                        <input type="file" class="form-control" id="imagem" name="imagem">
+                                    </div>                  
                                     
                                     <button type="submit" class="btn botao-cadastrar w-100">Salvar alterações</button>
                                 </form>

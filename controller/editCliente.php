@@ -2,21 +2,24 @@
 include_once './model/api/clienteAPI.php';
 include_once './model/conn/Database.php';
 include_once './model/dao/clienteDAO.php';
+include_once './model/dao/usuarioDAO.php';
 
-function atualizarCliente($nome, $email, $rg, $cpf, $id, $dataNasc){
+function atualizarCliente($nome, $email, $rg, $cpf, $id, $dataNasc, $imagem){
     $database = new Database();
     $db = $database->getConnection();
 
     $cliente = new Cliente($id, $email);
     $cliente->cadastroCompleto($dataNasc, $rg, $cpf, $id, $email, $nome);
-  
+
     $ClienteDao = new clienteDAO($db);
 
-    /*if($imagem){
+    $Usuario = new UsuarioDAO($db);
+
+    if($imagem){
         $imgData = file_get_contents($imagem);
         $imgData = pg_escape_bytea($db,$imgData);
-        $produto->setImagem($imgData);
-    }*/
+        $cliente->setImagem($imgData);
+    }
 
     try{
         if ($ClienteDao->update($cliente)){
@@ -38,8 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $RG = $_POST['RG'];
     $CPF = $_POST['CPF'];
     $dataNasc = $_POST['dataNasc'];
+    $imagem = $_POST['imagem'];
 
-    atualizarCliente($nome,$email,$RG,$CPF,$id,$dataNasc);
+    atualizarCliente($nome,$email,$RG,$CPF,$id,$dataNasc, $imagem);
 
     header("location: /conta");
 }

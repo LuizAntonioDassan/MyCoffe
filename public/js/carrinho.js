@@ -32,4 +32,37 @@ $(document).ready(function() {
             }
         });
     });
+    $('#continuar').on('click', function(e) {
+        e.preventDefault();
+        var url = 'produtos';
+        window.location.href = url;
+    });
+    $('#cancelar').on('click', function(e) {
+        e.preventDefault();
+        var url = 'cancelarCompra';
+        window.location.href = url;
+    });
+    $(document).ready(function() {
+        $('#excluir').on('click', function() {
+            var codigoProduto = $(this).data('codigo');
+    
+            $.ajax({
+                url: 'excluir_produto.php',
+                type: 'POST',
+                data: { codigo: codigoProduto },
+                success: function(response) {
+                    if (response.success) {
+                        alert('Produto excluído com sucesso!');
+                        location.reload(); // Recarrega a página para atualizar a lista de produtos
+                    } else {
+                        alert('Erro ao excluir produto: ' + response.error);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Erro ao excluir produto:', error);
+                }
+            });
+        });
+    });
+    
 });

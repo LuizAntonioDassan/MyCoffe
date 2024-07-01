@@ -45,7 +45,7 @@
                 </button>
               </form>
               <div class="text-center mt-3">
-                <p>Não possui uma conta? <a href="#">Cadastre-se</a></p>
+                <p>Não possui uma conta? <a href="/">Cadastre-se</a></p>
               </div>
             </div>
           </div>

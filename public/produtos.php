@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="/public/documentos-css/produtos.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="public/js/adicionarCarrinho.js"></script>
 </head>
@@ -54,11 +55,11 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
               <div class="card h-100">
                 <?php if ($produto->getImagem()): ?>
-                  <!--<img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto"> -->
                   <img src="data:image/jpeg;base64,<?php echo base64_encode(pg_unescape_bytea($produto->getImagem())); ?>"
-                    alt="Imagem do Produto" width="100">
-                <?php endif ?>
-                <div class="card-body">
+                  alt="Imagem do Produto" width="100">
+                  <?php endif ?>
+                  <div class="card-body">
+                  <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
                   <h5 class="card-title"><?php echo $produto->getNome(); ?></h5>
                   <p class="card-text"><?php echo $produto->getDescricao(); ?></p>
                   <p class="card-text">Preço: R$ <?php echo $produto->getPreco(); ?></p>

@@ -37,7 +37,7 @@
         </div>
         <div class="mb-3">
           <h5>Permissão:</h5>
-          <p>Funcionário</p>
+          <p><?php echo $_SESSION['nomecargo'];?></p>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2">
           <?php if (isset($_SESSION['idcargo']) && $_SESSION['idcargo'] == 1) { ?>

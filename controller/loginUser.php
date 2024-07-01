@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if($resultAdm && pg_num_rows($resultAdm) > 0){
                 $row = pg_fetch_assoc($resultAdm);
                 $_SESSION['idcargo'] = $row['idcargo'];
+                $_SESSION['nomecargo'] = $row['nome'];
                 $response['success'];
             }
             $queryCliente = "SELECT datanascimento, rg, cpf from cliente u  where id = $1";
@@ -46,6 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['rg'] = $row['rg'];
                 $_SESSION['dataNasc'] = $row['datanascimento'];
                 $_SESSION['cpf'] = $row['cpf'];
+                $response['success'];
+            }
+            $queryEndereco = "SELECT * from endereco e where cpfcliente = $1";
+            $resultEndereco = pg_query_params($db, $queryEndereco, array($_SESSION['cpf']));          
+            if($resultEndereco && pg_num_rows($resultEndereco) > 0){
+                $row = pg_fetch_assoc($resultEndereco);
+                $_SESSION['rua'] = $row['rua'];
+                $_SESSION['bairro'] = $row['bairro'];
+                $_SESSION['numero'] = $row['numero'];
+                $_SESSION['cidade'] = $row['cidade'];
+                $_SESSION['cep'] = $row['cep'];
                 $response['success'];
             }
 

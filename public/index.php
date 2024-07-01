@@ -62,6 +62,9 @@ switch ($request) {
     case '/relatorioVendas':
         require $baseDir . '/documentos-html/relatorioVendas.php';
         break;
+    case '/relatoriosListagem':
+        require $baseDir . '/documentos-html/listaRelatorios.php';
+        break;
     //Cadastros
     case '/cadastraCategoria':
         require $baseDir . '/documentos-html/registrarCategoria.php';
@@ -89,8 +92,14 @@ switch ($request) {
     case '/createSimplifiedUser':
         require 'controller/createSimplifiedUser.php';
         break;
+    case '/cancelarCompra':
+        require 'controller/cancelarCompra.php';
+        break;
     case '/verifySessionCpf':
         require 'controller/verifySessionCpf.php';
+        break;
+    case '/excluir_produto.php':
+        require 'controller/excluir_produto.php';
         break;
     case '/getRelatorios.php':
         require 'controller/getRelatorios.php';

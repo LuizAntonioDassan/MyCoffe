@@ -6,6 +6,7 @@ class Cliente {
     public $Dt_Nascimento;
     public $email;
     public $nome;
+    public $imagem;
     public function __construct($id, $email) {
         $this->id = $id;
         $this->email = $email;
@@ -76,6 +77,26 @@ class Cliente {
     public function getNome()
     {
         return $this->nome;
+    }
+
+    /**
+     * Get the value of imagem
+     */ 
+    public function getImagem()
+    {
+        return $this->imagem;
+    }
+
+    /**
+     * Set the value of imagem
+     *
+     * @return  self
+     */ 
+    public function setImagem($imagem)
+    {
+        $this->imagem = $imagem;
+
+        return $this;
     }
 }
 ?>

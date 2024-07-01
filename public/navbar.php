@@ -11,21 +11,22 @@
 
 <body>
 
+
   <header>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg custom-navbar">
       <div class="container-fluid">
         <?php if (!isset($_SESSION['idUsuario'])) { ?>
-          <a class="navbar-brand" href="/">
-            MyCoffee
-          </a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="navbar-brand" href="/">
+              MyCoffee
+            </a>
             <li class="nav-item">
               <a class="nav-link active" aria-current="" href="login">Login</a>
             </li>
           </ul>
-          <?php } else { ?>
-            <a class="navbar-brand" href="/produtos">
+        <?php } else { ?>
+          <a class="navbar-brand" href="/produtos">
             MyCoffee
           </a>
         <?php } ?>
@@ -34,30 +35,30 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <?php
-            if (isset($_SESSION['idUsuario'])) {
-              ?>
-              <!--<li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Principal</a>
-              </li>-->
+          <?php
+          if (isset($_SESSION['idUsuario'])) {
+            ?>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="produtos">Produtos</a>
-              </li>            
-              <li class="nav-item">
+              </li>
+              <li class="nav-item navbar-carrinho right">
                 <a class="nav-link" href="carrinho">Carrinho</a>
-              </li> 
-                <?php
-                if (isset($_SESSION['idcargo'])) {
-                  ?>
-                  <li class="nav-item">
-                    <a class="nav-link" href="perfilFuncionario">Minha Conta</a>
-                  </li>
-                <?php }else{ ?>
-                  <li class="nav-item">
-                    <a class="nav-link" href="conta">Minha conta</a>
-                  </li>
-                <?php }?>
+              </li>
+              <?php
+              if (isset($_SESSION['idcargo'])) {
+                ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="perfilFuncionario">Minha Conta</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="relatoriosListagem">Relatorios</a>
+                </li>
+              <?php } else { ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="conta">Minha conta</a>
+                </li>
+              <?php } ?>
             <?php } ?>
 
             <?php
@@ -70,6 +71,7 @@
             <?php } ?>
           </ul>
         </div>
+      </div>
       </div>
     </nav>
   </header>

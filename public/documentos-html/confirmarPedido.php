@@ -21,7 +21,7 @@
         <h2 class="text-center">Informações de pagamento e entrega</h2>
 
         <h3 class="mt-3">Valor total:</h3>
-        <span>R$ <?php echo $_SESSION['valorFinal'];?></span>
+        <span>R$ <?php if(isset($_SESSION['valorFinal'])){echo $_SESSION['valorFinal'];}?></span>
 
         <h3 class="mt-3">Endereço de entrega:</h3>
         <span>Endereço</span>
@@ -49,19 +49,7 @@
 
   </main>
 
-  <footer class="text-center background-footer">
-
-    <section class="container p-4 pb-0">
-      <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
-      <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
-      <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
-    </section>
-
-    <div class="p-3">
-      UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
-    </div>
-
-  </footer>
+  <?php require_once('public/footer.php');?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

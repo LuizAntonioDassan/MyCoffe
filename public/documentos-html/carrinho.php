@@ -56,7 +56,7 @@ $listCarrinho = $carrinhoDao->readById($carrinho_id);
             </div>
             <div class="d-flex align-items-center">
               <span class="h5 mb-0 me-3">R$<?php echo $produto->getPreco(); ?></span>
-              <button class="btn btn-outline-danger btn-sm">Excluir</button>
+              <button class="btn btn-outline-danger btn-sm" id="excluir" data-codigo="<?php echo $produto->getCodigobarras(); ?>">Excluir</button>
             </div>
           </div>
           <!-- Fim do Item do Produto -->
@@ -99,7 +99,8 @@ $listCarrinho = $carrinhoDao->readById($carrinho_id);
 
     <!-- Botões de Ação -->
     <div class="d-flex justify-content-between">
-      <button class="btn btn-danger">Cancelar Compra</button>
+      <button class="btn btn-danger" id="cancelar">Cancelar Compra</button>
+      <button class="btn mx-1 botao-azul" id="continuar">Continuar comprando</button>
       <button type="submit" class="btn btn-success" id="confirmar">Confirmar Pagamento</button>
 
     </div>
@@ -109,19 +110,7 @@ $listCarrinho = $carrinhoDao->readById($carrinho_id);
 
 
 
-  <footer class="text-center background-footer">
-
-    <section class="container p-4 pb-0">
-      <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
-      <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
-      <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
-    </section>
-
-    <div class="p-3">
-      UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
-    </div>
-
-  </footer>
+  <?php require_once('public/footer.php');?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

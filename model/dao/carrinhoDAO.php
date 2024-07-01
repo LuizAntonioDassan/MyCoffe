@@ -74,5 +74,15 @@ class CarrinhoDAO {
             throw new Exception("Erro ao deletar item do carrinho: " . pg_last_error($this->conn));
         }
     }
+    public function deleteByProduto($codigo) {
+        $query = "DELETE FROM {$this->table_name} WHERE codigoproduto = $1";
+        $result = pg_query_params($this->conn, $query, array($codigo));
+
+        if ($result) {
+            return true;
+        } else {
+            throw new Exception("Erro ao deletar item do carrinho: " . pg_last_error($this->conn));
+        }
+    }
 }
 ?>
