@@ -48,6 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imagem = $_FILES['imagem']['tmp_name'];
     if (isset($_POST['inativo'])) {
         inativar($codigoBarras);
+        header("Location: /listaProdutos");
+        exit();
     }
     if ($imagem) {
         $resultado = atualizProduto($nome, $codigoBarras, $quantidade, $preco, $descricao, $codigoInterno, $categoria, $imagem);

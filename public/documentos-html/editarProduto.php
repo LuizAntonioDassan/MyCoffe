@@ -88,7 +88,7 @@ $_SESSION['codigointerno'] = $produto->getCodigointerno();
                                         <label class="form-label">Atividade</label>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" id="inativo" name="inativo"
-                                                value="false">
+                                                value="true">
                                             <label class="form-check-label" for="inativo">
                                                 Inativo
                                             </label>
