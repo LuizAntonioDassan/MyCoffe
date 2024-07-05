@@ -55,13 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT); 
-    $permissao = $_POST['permissao'];
+    $permissao = $_POST['cargo_id'];
 
     $resultado = createUser($nome, $email, $senha);
     $resultado2 = createFuncionario($nome,$email, $permissao);
 
     if($resultado && $resultado2){
-        header("Location: /conta");
+        header("Location: /perfilFuncionario");
         exit();
     }
 }
