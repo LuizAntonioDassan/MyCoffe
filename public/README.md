@@ -6,13 +6,13 @@ MyCoffee
 2. Descrição
 Aplicação web para um e-commerce de uma cafeteria. 
 
-Tecnologias utilizadas:
+3. Tecnologias utilizadas:
 - PHP (Docker)
 - JavaScript 
 - HTML e CSS (Bootstrap)
 - Banco de Dados
 
-Funcionalidades implementadas:
+4. Funcionalidades implementadas:
 - Cadastro
 - Login
 - Busca de produtos
@@ -22,7 +22,7 @@ Funcionalidades implementadas:
 - Hospedagem de imagens para todos os produtos
 - Upload de foto de perfil para o cliente
 
-Ferramentas utilizadas:
+5. Ferramentas utilizadas:
 - Visual Studio Code para implementação
 - Adobe color para definição da paleta de cores
 - Google Fontes e extensão 'Fonts Ninja' para escolher a fonte do projeto
@@ -31,6 +31,28 @@ Ferramentas utilizadas:
 Instalação
 - Passo 1: Acessar o link https://github.com/LuizAntonioDassan/MyCoffe/tree/homolog
 - Passo 2: Clicar em <> Code e realizar o download ZIP
-- Passo 3: Descompactar o arquivo que foi baixado
+- Passo 3: Descompactar o arquivo que foi baixado 
+- Passo 4: Instalar ou verificar se o Docker está instalado e corretamente configurado no PC
+- Passo 5: Abrir o terminal e navegar até a pasta onde está o arquivo 'docker-compose.yaml' 
+- Passo 6: Executar o seguinte comando: 'docker-compose up --build -d'
+- Passo 7: Copie e cole no navegador a seguinte URL: 'http://localhost:8080'. Se não funcionar, por favor, tente a URL 'http://localhost:81'. A aplicação abrirá no navegador e poderá ser usada tranquilamente.
 
-docker-compose up --build -d
+6. Login
+
+- Login como ADMINISTRADOR
+[ E-MAIL DE ADMINISTRADOR ]
+[ SENHA ]
+
+- Login como FUNCIONÁRIO
+[ E-MAIL DE FUNCIONÁRIO ]
+[ SENHA ]
+
+- Login como CLIENTE
+Basta criar uma conta e o acesso será feito como cliente
+
+7. Utilização da aplicação
+O usuário a nível de cliente pode se cadastrar, realizar login, ver o catálogo de produtos, adicionar ao carrinho e "finalizar a compra". Também pode adicionar uma foto de perfil, editar seus dados pessoais e cadastrar um endereço.
+O usuário a nível de administrador ou funcionário pode registrar funcionários e produtos, criar categorias, ver tudo que já está registrado no Banco de Dados, editar ou excluir dados e gerar relatórios.
+
+
+
