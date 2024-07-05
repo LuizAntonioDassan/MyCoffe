@@ -38,12 +38,12 @@
 - Passo 7: Copie e cole no navegador a seguinte URL: 'http://localhost:81'. A aplicação abrirá e poderá ser usada tranquilamente.
 
 7. Login como ADMINISTRADOR:
-- [ E-MAIL DE ADMINISTRADOR ]
-- [ SENHA ]
+- adm@gmail.com
+- 123456
 
 8. Login como FUNCIONÁRIO:
-- [ E-MAIL DE FUNCIONÁRIO ]
-- [ SENHA ]
+- funcionario@gmail.com
+- 123456
 
 9. Login como CLIENTE:
 - Basta criar uma conta e o acesso será feito como cliente
