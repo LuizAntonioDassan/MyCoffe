@@ -4,6 +4,8 @@
 
 <head>
   <link rel="stylesheet" href="/public/documentos-css/produtos.css">
+  <link rel="stylesheet" href="/public/documentos-css/lista.css">
+  <link rel="stylesheet" href="/public/documentos-css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="public/js/adicionarCarrinho.js"></script>
 </head>
@@ -50,29 +52,38 @@
 
         if ($listProdutos) {
           foreach ($listProdutos as $produto) {
-
             ?>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-              <div class="card h-100">
+              <div class="card card-img-container">
                 <?php if ($produto->getImagem()): ?>
                   <img src="data:image/jpeg;base64,<?php echo base64_encode(pg_unescape_bytea($produto->getImagem())); ?>"
-                  alt="Imagem do Produto" width="100">
-                  <?php endif ?>
-                  <div class="card-body">
-                  <img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">
+                    alt="Imagem do Produto" width="100" class="card-img-top">
+                <?php endif ?>
+                <div class="card-body">
+                  <!--<img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">-->
                   <h5 class="card-title"><?php echo $produto->getNome(); ?></h5>
                   <p class="card-text"><?php echo $produto->getDescricao(); ?></p>
                   <p class="card-text">Preço: R$ <?php echo $produto->getPreco(); ?></p>
                   <p class="card-text">Descrição: <?php echo $produto->getDescricao(); ?></p>
                   <div>
-                    <input type="number" name="quantidade" id="quantidade_<?php echo $produto->getCodigobarras();?>" class="form-control text-center"
-                      min="1" max="99" value="1">
+                    <input type="number" name="quantidade" id="quantidade_<?php echo $produto->getCodigobarras(); ?>"
+                      class="form-control text-center" min="1" max="99" value="1">
                   </div>
-                  <div class="d-flex justify-content-between">
+                  <div class="d-flex justify-content-between mt-2">
                     <a href="#" class="btn btn-primary btn-comprar" data-codigo="<?php echo $produto->getCodigobarras(); ?>"
                       data-preco="<?php echo $produto->getPreco(); ?>">
                       Comprar</a>
                   </div>
+                  <?php
+                  if (isset($_SESSION['produto_adicionado']) && $_SESSION['produto_adicionado'] == true) {
+                    echo "<div class='alert alert-success alert-dismissible fade show' role='alert' id='produto-adicionado'>
+            Produto adicionado ao carrinho com sucesso!
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div>";
+                    unset($_SESSION['produto_adicionado']); // Limpar a variável de sessão
+                  }
+                  ?>
+
                 </div>
               </div>
             </div>

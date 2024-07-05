@@ -1,3 +1,14 @@
+<?php
+include_once './controller/hasPermisson.php'; 
+
+$userId = $_SESSION['idUsuario'];
+$requiredPermission = 'RegistraProduto';
+
+if (!hasPermission($userId, $requiredPermission)) {
+    header('Location: /semPermissao'); 
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

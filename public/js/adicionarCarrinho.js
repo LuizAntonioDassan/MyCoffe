@@ -13,3 +13,12 @@ $(document).ready(function() {
         window.location.href = url;
     });
 });
+
+$(document).ready(function() {
+    $('.btn-comprar').on('click', function() {
+        $(this).prop('disabled', true).text('Adicionado!');
+        setTimeout(() => {
+            $(this).prop('disabled', false).text('Comprar');
+        }, 2000);
+    });
+});

@@ -17,3 +17,17 @@ body{
 .card{
     background-color: var(--corNova1);
 }
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Defina a altura desejada */
+    object-fit: cover; /* Garante que a imagem preencha o contêiner mantendo sua proporção */
+}
+
+.card-img-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    
+    overflow: hidden; /* Esconde o overflow da imagem */
+}

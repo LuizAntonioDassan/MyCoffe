@@ -44,8 +44,8 @@ $listCarrinho = $carrinhoDao->readById($carrinho_id);
         <div class="list-group mb-4">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-              <img src="/public/imagens/artesanais/doce-de-leite.jpg" alt="Produto" class="img-thumbnail"
-                style="width: 100px; height: 100px; object-fit: cover;">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode(pg_unescape_bytea($produto->getImagem()));?>"
+            alt="Imagem do Produto" width="100" class="card-img-top">
               <div class="ms-3">
                 <h5 class="mb-1"><?php echo $produto->getNome(); ?></h5>
                 <div>

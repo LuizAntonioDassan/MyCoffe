@@ -9,9 +9,9 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../documentos-css/style.css">
-    <link rel="stylesheet" href="../documentos-css/formulario.css">
+    <link rel="shortcut icon" href="public/icones/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="public/documentos-css/style.css">
+    <link rel="stylesheet" href="public/documentos-css/formulario.css">
 </head>
 
 <body>

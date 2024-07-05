@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['idUsuario'] = $user['id'];
             $_SESSION['email'] = $email;
             $_SESSION['nome'] = $user['nome'];
-            $queryAdm = "SELECT c.id as idcargo, c.nome, c.permissao, f.email, f.cargo_id, f.id as idpessoa from cargo c join funcionario f on c.id = f.cargo_id where f.id = $1";
+            $queryAdm = "SELECT c.id as idcargo, c.nome, f.email, f.cargo_id, f.id as idpessoa from cargo c join funcionario f on c.id = f.cargo_id where f.id = $1";
             $resultAdm = pg_query_params($db, $queryAdm, array($_SESSION['idUsuario']));
             if($resultAdm && pg_num_rows($resultAdm) > 0){
                 $row = pg_fetch_assoc($resultAdm);

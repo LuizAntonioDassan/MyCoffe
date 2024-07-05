@@ -21,9 +21,9 @@ $_SESSION['codigointerno'] = $produto->getCodigointerno();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../icones/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../documentos-css/formulario.css">
-    <link rel="stylesheet" href="../documentos-css/style.css">
+    <link rel="shortcut icon" href="public/icones/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="public/documentos-css/formulario.css">
+    <link rel="stylesheet" href="public/documentos-css/style.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@ $_SESSION['codigointerno'] = $produto->getCodigointerno();
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title text-center mb-4">Editar Produto</h3>
-                            <form action="editProduto" method="post">
+                            <form action="editProduto" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="nome-produto" class="form-label">Nome do Produto</label>
                                     <input type="text" class="form-control" id="nome-produto" name="nome"
@@ -81,8 +81,8 @@ $_SESSION['codigointerno'] = $produto->getCodigointerno();
                                         placeholder="Digite a descrição do produto"><?php echo $produto->getDescricao();?></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="imagem-produto" class="form-label">Imagem</label> 
-                                    <input type="file" class="form-control" id="imagem-produto" name="imagem">
+                                    <label for="imagem" class="form-label">Imagem</label> 
+                                    <input type="file" class="form-control" id="imagem  " name="imagem">
                                 </div>
                                 <div class="mb-3">
                                         <label class="form-label">Atividade</label>

@@ -33,5 +33,6 @@ $quantidade = $_GET['quantidade'];
 
 adicionaCarrinho($carrinho_id,$produto_codigo,$preco,$quantidade);
 
+$_SESSION['produto_adicionado'] = true;
 header("location: /produtos");
 ?>

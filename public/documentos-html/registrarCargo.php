@@ -2,7 +2,7 @@
 include_once './controller/hasPermisson.php'; 
 
 $userId = $_SESSION['idUsuario'];
-$requiredPermission = 'RegistraCategoria';
+$requiredPermission = 'RegistraCargo';
 
 if (!hasPermission($userId, $requiredPermission)) {
     header('Location: /semPermissao'); 
@@ -26,7 +26,7 @@ if (!hasPermission($userId, $requiredPermission)) {
 
 <body>
 
-<?php include('public/navbar.php'); ?>
+    <?php include ('public/navbar.php'); ?>
 
     <main>
         <div class="container">
@@ -35,17 +35,13 @@ if (!hasPermission($userId, $requiredPermission)) {
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title text-center mb-4">Registro de Categoria</h3>
-                            <form action="createCategoria" method="post">
+                            <form action="createCargo" method="post">
                                 <div class="mb-3">
-                                    <label for="nome-categoria" class="form-label">Nome da categoria</label>
+                                    <label for="nome-categoria" class="form-label">Nome do Cargo</label>
                                     <input type="text" class="form-control" id="nome-categoria"
                                         placeholder="Digite o nome da categoria" name="nome">
-                                </div>                               
-                                <div class="mb-3">
-                                    <label for="imagem-categoria" class="form-label">Imagem</label>
-                                    <input type="file" class="form-control" id="imagem-categoria">
-                                </div>
-                                <button type="submit" class="btn w-100">Criar categoria</button>
+                                </div>                                                             
+                                <button type="submit" class="btn w-100">Criar Cargo</button>
                             </form>
                         </div>
                     </div>
@@ -53,8 +49,7 @@ if (!hasPermission($userId, $requiredPermission)) {
             </div>
         </div>
     </main>
-
-   <?php require_once('public/footer.php');?>
+    <?php require_once ('public/footer.php'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

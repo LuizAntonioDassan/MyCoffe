@@ -39,4 +39,19 @@ $(document).ready(function() {
         var url = 'cadastraCategoria';
         window.location.href = url;
     });
+    $('#cadastroCargo').on('click', function(e) {
+        e.preventDefault();
+        var url = 'cadastroCargo';
+        window.location.href = url;
+    });
+    $('#cadastroPermissao').on('click', function(e) {
+        e.preventDefault();
+        var url = 'cadastroPermissao';
+        window.location.href = url;
+    });
+    $('#listaCargos').on('click', function(e) {
+        e.preventDefault();
+        var url = 'listaCargos';
+        window.location.href = url;
+    });
 });

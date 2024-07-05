@@ -40,6 +40,9 @@ switch ($request) {
     case '/adicionarEndereco':
         require $baseDir . '/documentos-html/adicionarEndereco.php';
         break;
+    case '/semPermissao':
+        require $baseDir . '/documentos-html/semPermissao.php';
+        break;
     //Listagens Visao Funcionario
     case '/perfilFuncionario':
         require $baseDir . '/documentos-html/perfilFuncionario.php';
@@ -52,6 +55,9 @@ switch ($request) {
         break;
     case '/listaCategoria':
         require $baseDir . '/documentos-html/listaDeCategorias.php';
+        break;
+    case '/listaCargos':
+        require $baseDir . '/documentos-html/listaDeCargos.php';
         break;
     case '/listaFuncionario':
         require $baseDir . '/documentos-html/listaDeFuncionarios.php';
@@ -74,6 +80,15 @@ switch ($request) {
         break;
     case '/cadastroProduto':
         require $baseDir . '/documentos-html/registrarProduto.php';
+        break;
+    case '/cadastroCargo':
+        require $baseDir . '/documentos-html/registrarCargo.php';
+        break;
+    case '/cadastroPermissao':
+        require $baseDir . '/documentos-html/registrarPermissao.php';
+        break;
+    case '/vincularPermissao':
+        require $baseDir . '/documentos-html/vincularPermissaoCargo.php';
         break;
     //Ediçao
     case '/editarProduto':
@@ -113,6 +128,15 @@ switch ($request) {
     case '/editCliente':
         require 'controller/editCliente.php';
         break;
+    case '/adicionar_permissao':
+        require 'controller/adicionar_permissao.php';
+        break;
+    case '/adicionar_cargo':
+        require 'controller/adicionar_cargo.php';
+        break;
+    case '/associar_permissao':
+        require 'controller/associar_permissao.php';
+        break;
     case '/finalizaCompra':
         require 'controller/finalizaCompra.php';
         break;
@@ -145,6 +169,9 @@ switch ($request) {
         break;
     case '/createFuncionario':
         require 'controller/createFuncionario.php';
+        break;
+    case '/createCargo':
+        require 'controller/createCargo.php';
         break;
     //Tela de erro
     default:

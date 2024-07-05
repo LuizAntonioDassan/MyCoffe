@@ -42,7 +42,7 @@ class ProdutoDAO {
         if ($result) {
             $produtos = [];
             while ($row = pg_fetch_assoc($result)) {
-                $produtos[] = new Produto(
+                $produto = new Produto(
                     $row['nome'],
                     $row['preco'],
                     $row['precodesconto'],
@@ -54,6 +54,10 @@ class ProdutoDAO {
                     $row['nomecategoria'],
                     $row['descricao'],
                 );
+                if(isset($row['imagem'])){
+                    $produto->setImagem($row['imagem']);
+                }
+                $produtos[] = $produto;
             }
             return $produtos;
         } else {
@@ -69,7 +73,7 @@ class ProdutoDAO {
         if ($result) {
             $row = pg_fetch_assoc($result);
             if ($row) {
-                return new Produto(
+                $produto = new Produto(
                     $row['nome'],
                     $row['preco'],
                     $row['precodesconto'],
@@ -81,6 +85,8 @@ class ProdutoDAO {
                     $row['nomecategoria'],
                     $row['descricao']
                 );
+                $produto->setImagem($row['imagem']);
+                return $produto;
             } else {
                 return null;
             }
@@ -93,8 +99,8 @@ class ProdutoDAO {
     public function update(Produto $produto, $id) {
         $query = "UPDATE {$this->table_name} SET 
                     nome = $1, preco = $2, precodesconto = $3, descricao = $4, codigobarras = $5, 
-                    marca = $6, quantidade = $7, atividade = $8, nomecategoria = $9 
-                  WHERE codigobarras = $10";
+                    marca = $6, quantidade = $7, atividade = $8, nomecategoria = $9, imagem = $10
+                  WHERE codigobarras = $11";
         $result = pg_query_params($this->conn, $query, array(
             $produto->nome,
             $produto->preco,
@@ -105,6 +111,7 @@ class ProdutoDAO {
             $produto->quantidade,
             $produto->atividade,
             $produto->categoria,
+            $produto->imagem,
             $id
         ));
 

@@ -12,3 +12,10 @@ body{
 .card{
   background-color: var(--corNova1);
 }
+
+#produto-adicionado {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+}

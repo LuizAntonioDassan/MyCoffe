@@ -11,8 +11,8 @@ class CargoDAO {
     }
 
     public function create(Cargo $cargo) {
-        $query = "INSERT INTO {$this->table_name} (id, nome, permissao) VALUES ($1, $2, $3)";
-        $result = pg_query_params($this->conn, $query, array($cargo->id, $cargo->nome, $cargo->permissao));
+        $query = "INSERT INTO {$this->table_name} (nome) VALUES ($1)";
+        $result = pg_query_params($this->conn, $query, array($cargo->nome));
         
         if ($result) {
             return true;
@@ -28,7 +28,9 @@ class CargoDAO {
         if ($result) {
             $cargos = [];
             while ($row = pg_fetch_assoc($result)) {
-                $cargos[] = new Cargo($row['id'], $row['nome'], $row['permissao']);
+                $cargo = new Cargo($row['nome']);
+                $cargo->setId($row['id']);
+                $cargos[] = $cargo;
             }
             return $cargos;
         } else {
@@ -43,7 +45,9 @@ class CargoDAO {
         if ($result) {
             $row = pg_fetch_assoc($result);
             if ($row) {
-                return new Cargo($row['id'], $row['nome'], $row['permissao']);
+                $cargo = new Cargo($row['nome']);
+                $cargo->setId($row['id']);
+                return $cargo;
             } else {
                 return null;
             }
@@ -53,7 +57,7 @@ class CargoDAO {
     }
 
     public function update(Cargo $cargo) {
-        $query = "UPDATE {$this->table_name} SET descricao = $1 WHERE id = $2";
+        $query = "UPDATE {$this->table_name} SET nome = $1 WHERE id = $2";
         $result = pg_query_params($this->conn, $query, array($cargo->nome, $cargo->id));
 
         if ($result) {
@@ -73,5 +77,20 @@ class CargoDAO {
             throw new Exception("Erro ao deletar cargo: " . pg_last_error($this->conn));
         }
     }
+    public function getPermissions($cargo_id) {
+        $query = "SELECT permissao_id FROM cargo_permissoes WHERE cargo_id = $1";
+        $result = pg_query_params($this->conn, $query, array($cargo_id));
+
+        if ($result) {
+            $permissions = [];
+            while ($row = pg_fetch_assoc($result)) {
+                $permissions[] = $row['permissao_id'];
+            }
+            return $permissions;
+        } else {
+            throw new Exception("Erro ao buscar permissões do cargo: " . pg_last_error($this->conn));
+        }
+    }
+    
 }
 ?>

@@ -1,6 +1,12 @@
-<?php 
-if($_SESSION['idcargo'] == 3){
-  header('location: /perfilFuncionario');
+<?php
+include_once './controller/hasPermisson.php';
+
+$userId = $_SESSION['idUsuario'];
+$requiredPermission = 'RegistraFuncionario';
+
+if (!hasPermission($userId, $requiredPermission)) {
+    header('Location: /semPermissao');
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -20,7 +26,7 @@ if($_SESSION['idcargo'] == 3){
 
 <body>
 
-<?php include('public/navbar.php'); ?>
+    <?php include ('public/navbar.php'); ?>
 
 
     <body>
@@ -34,7 +40,8 @@ if($_SESSION['idcargo'] == 3){
                                 <form method="post" action="createFuncionario">
                                     <div class="mb-3">
                                         <label for="nome" class="form-label">Nome</label>
-                                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="nome">
+                                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome"
+                                            name="nome">
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">E-mail</label>
@@ -47,28 +54,27 @@ if($_SESSION['idcargo'] == 3){
                                             placeholder="Digite a senha" name="senha">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Permissão</label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="permissao" id="masculino"
-                                                value="3">
-                                            <label class="form-check-label" for="masculino">
-                                                Funcionário
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="permissao" id="masculino"
-                                                value="2">
-                                            <label class="form-check-label" for="masculino">
-                                                Gerente
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="permissao" id="feminino"
-                                                value="1">
-                                            <label class="form-check-label" for="feminino">
-                                                Administrador
-                                            </label>
-                                        </div>
+                                        <label for="cargo_id" class="form-label">Permissão</label>
+                                        <select class="form-select" id="cargo_id" name="cargo_id">
+                                            <?php
+                                            // Inclua o arquivo DAO dos cargos
+                                            include_once 'model/dao/CargoDAO.php';
+                                            include_once 'model/conn/Database.php';
+                                            $database = new Database();
+                                            $db = $database->getConnection();
+
+                                            // Crie uma instância do DAO
+                                            $cargoDAO = new CargoDAO($db);
+
+                                            // Busque todos os cargos
+                                            $cargos = $cargoDAO->readAll();
+
+                                            // Gere as opções do select
+                                            foreach ($cargos as $cargo) {
+                                                echo "<option value='{$cargo->getId()}'>{$cargo->getNome()}</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                     <div class="mb-3" name="datanascimento">
                                         <label for="data-nascimento" class="form-label">Data de nascimento</label>
@@ -78,34 +84,35 @@ if($_SESSION['idcargo'] == 3){
                                         <label for="foto-perfil" class="form-label">Foto de perfil</label>
                                         <input type="file" class="form-control" id="foto-perfil">
                                     </div>
-                                    <button type="submit" class="btn botao-cadastrar w-100">Registrar funcionário</button>
+                                    <button type="submit" class="btn botao-cadastrar w-100">Registrar
+                                        funcionário</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+            </div>
+        </main>
 
 
-    <footer class="text-center background-footer">
+        <footer class="text-center background-footer">
 
-        <section class="container p-4 pb-0">
-            <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
-            <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
-            <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
-        </section>
+            <section class="container p-4 pb-0">
+                <a href="#!" class="btn"><i class="bi bi-whatsapp"></i></a>
+                <a href="#!" class="btn"><i class="bi bi-instagram"></i></a>
+                <a href="#!" class="btn"><i class="bi bi-twitter"></i></a>
+            </section>
 
-        <div class="p-3">
-            UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
-        </div>
+            <div class="p-3">
+                UFMS 2024 <i class="bi bi-c-circle"></i> Construção de Software
+            </div>
 
-    </footer>
+        </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+            </script>
+    </body>
 
 </html>
