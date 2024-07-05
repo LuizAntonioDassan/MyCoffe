@@ -1,8 +1,9 @@
-# Use a imagem base do Nginx
-FROM nginx:latest
+FROM php:8.2-fpm
 
-# Copiar o arquivo de configuração do Nginx para o contêiner
-COPY default.conf /etc/nginx/conf.d/default.conf
+RUN apt-get update \
+    && apt-get install -y libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql pgsql
 
-# Expor a porta 80 para o Nginx
-EXPOSE 80
+WORKDIR /var/www/html
+
+CMD ["php-fpm"]
