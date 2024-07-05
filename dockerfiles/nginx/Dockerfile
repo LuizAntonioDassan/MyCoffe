@@ -1,9 +1,6 @@
-FROM php:8.2-fpm
+FROM nginx:alpine
 
-RUN apt-get update \
-    && apt-get install -y libpq-dev \
-    && docker-php-ext-install pdo pdo_pgsql pgsql
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY . /var/www/html
 
-WORKDIR /var/www/html
-
-CMD ["php-fpm"]
+EXPOSE 80
