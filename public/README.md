@@ -3,7 +3,7 @@
 1. Título do Projeto:
 MyCoffee
 
-2. Descrição
+2. Descrição:
 Aplicação web para um e-commerce de uma cafeteria. 
 
 3. Tecnologias utilizadas:
