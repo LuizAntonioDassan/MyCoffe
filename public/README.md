@@ -1,10 +1,10 @@
 # Construção de software
 
 1. Título do Projeto:
-MyCoffee
+- MyCoffee
 
 2. Descrição:
-Aplicação web para um e-commerce de uma cafeteria. 
+- Aplicação web para um e-commerce de uma cafeteria. 
 
 3. Tecnologias utilizadas:
 - PHP (Docker)
@@ -28,7 +28,7 @@ Aplicação web para um e-commerce de uma cafeteria.
 - Google Fontes e extensão 'Fonts Ninja' para escolher a fonte do projeto
 - GIMP para edição de imagens
 
-Instalação:
+6. Instalação:
 - Passo 1: Acessar o link https://github.com/LuizAntonioDassan/MyCoffe/tree/homolog
 - Passo 2: Clicar em <> Code e realizar o download ZIP
 - Passo 3: Descompactar o arquivo que foi baixado 
@@ -37,22 +37,19 @@ Instalação:
 - Passo 6: Executar o seguinte comando: 'docker-compose up --build -d'
 - Passo 7: Copie e cole no navegador a seguinte URL: 'http://localhost:8080'. Se não funcionar, por favor, tente a URL 'http://localhost:81'. A aplicação abrirá no navegador e poderá ser usada tranquilamente.
 
-6. Login:
-
-- Login como ADMINISTRADOR:
+7. Login como ADMINISTRADOR:
 [ E-MAIL DE ADMINISTRADOR ]
 [ SENHA ]
 
-- Login como FUNCIONÁRIO:
+8. Login como FUNCIONÁRIO:
 [ E-MAIL DE FUNCIONÁRIO ]
 [ SENHA ]
-
-- Login como CLIENTE:
+9. Login como CLIENTE:
 Basta criar uma conta e o acesso será feito como cliente
 
-7. Utilização da aplicação:
-O usuário a nível de cliente pode se cadastrar, realizar login, ver o catálogo de produtos, adicionar ao carrinho e "finalizar a compra". Também pode adicionar uma foto de perfil, editar seus dados pessoais e cadastrar um endereço.
-O usuário a nível de administrador ou funcionário pode registrar funcionários e produtos, criar categorias, ver tudo que já está registrado no Banco de Dados, editar ou excluir dados e gerar relatórios.
+10. Utilização da aplicação:
+- O usuário a nível de cliente pode se cadastrar, realizar login, ver o catálogo de produtos, adicionar ao carrinho e "finalizar a compra". Também pode adicionar uma foto de perfil, editar seus dados pessoais e cadastrar um endereço.
+- O usuário a nível de administrador ou funcionário pode registrar funcionários e produtos, criar categorias, ver tudo que já está registrado no Banco de Dados, editar ou excluir dados e gerar relatórios.
 
 
 
