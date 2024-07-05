@@ -4,4 +4,4 @@ RUN apt-get update \
     && apt-get install -y libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 	
-CMD ["/index.php"]
+CMD ["./public/index.php"]
