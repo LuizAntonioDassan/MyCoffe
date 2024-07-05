@@ -38,16 +38,17 @@
 - Passo 7: Copie e cole no navegador a seguinte URL: 'http://localhost:8080'. Se não funcionar, por favor, tente a URL 'http://localhost:81'. A aplicação abrirá no navegador e poderá ser usada tranquilamente.
 
 7. Login como ADMINISTRADOR:
-[ E-MAIL DE ADMINISTRADOR ]
-[ SENHA ]
+- [ E-MAIL DE ADMINISTRADOR ]
+- [ SENHA ]
 
 8. Login como FUNCIONÁRIO:
-[ E-MAIL DE FUNCIONÁRIO ]
-[ SENHA ]
-9. Login como CLIENTE:
-Basta criar uma conta e o acesso será feito como cliente
+- [ E-MAIL DE FUNCIONÁRIO ]
+- [ SENHA ]
 
-10. Utilização da aplicação:
+10. Login como CLIENTE:
+- Basta criar uma conta e o acesso será feito como cliente
+
+11. Utilização da aplicação:
 - O usuário a nível de cliente pode se cadastrar, realizar login, ver o catálogo de produtos, adicionar ao carrinho e "finalizar a compra". Também pode adicionar uma foto de perfil, editar seus dados pessoais e cadastrar um endereço.
 - O usuário a nível de administrador ou funcionário pode registrar funcionários e produtos, criar categorias, ver tudo que já está registrado no Banco de Dados, editar ou excluir dados e gerar relatórios.
 
