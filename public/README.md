@@ -45,10 +45,10 @@
 - [ E-MAIL DE FUNCIONÁRIO ]
 - [ SENHA ]
 
-10. Login como CLIENTE:
+9. Login como CLIENTE:
 - Basta criar uma conta e o acesso será feito como cliente
 
-11. Utilização da aplicação:
+10. Utilização da aplicação:
 - O usuário a nível de cliente pode se cadastrar, realizar login, ver o catálogo de produtos, adicionar ao carrinho e "finalizar a compra". Também pode adicionar uma foto de perfil, editar seus dados pessoais e cadastrar um endereço.
 - O usuário a nível de administrador ou funcionário pode registrar funcionários e produtos, criar categorias, ver tudo que já está registrado no Banco de Dados, editar ou excluir dados e gerar relatórios.
 
