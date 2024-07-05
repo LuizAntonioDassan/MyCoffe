@@ -1,6 +1,6 @@
 # Construção de software
 
-1. Título do Projeto
+1. Título do Projeto:
 MyCoffee
 
 2. Descrição
@@ -28,7 +28,7 @@ Aplicação web para um e-commerce de uma cafeteria.
 - Google Fontes e extensão 'Fonts Ninja' para escolher a fonte do projeto
 - GIMP para edição de imagens
 
-Instalação
+Instalação:
 - Passo 1: Acessar o link https://github.com/LuizAntonioDassan/MyCoffe/tree/homolog
 - Passo 2: Clicar em <> Code e realizar o download ZIP
 - Passo 3: Descompactar o arquivo que foi baixado 
@@ -37,20 +37,20 @@ Instalação
 - Passo 6: Executar o seguinte comando: 'docker-compose up --build -d'
 - Passo 7: Copie e cole no navegador a seguinte URL: 'http://localhost:8080'. Se não funcionar, por favor, tente a URL 'http://localhost:81'. A aplicação abrirá no navegador e poderá ser usada tranquilamente.
 
-6. Login
+6. Login:
 
-- Login como ADMINISTRADOR
+- Login como ADMINISTRADOR:
 [ E-MAIL DE ADMINISTRADOR ]
 [ SENHA ]
 
-- Login como FUNCIONÁRIO
+- Login como FUNCIONÁRIO:
 [ E-MAIL DE FUNCIONÁRIO ]
 [ SENHA ]
 
-- Login como CLIENTE
+- Login como CLIENTE:
 Basta criar uma conta e o acesso será feito como cliente
 
-7. Utilização da aplicação
+7. Utilização da aplicação:
 O usuário a nível de cliente pode se cadastrar, realizar login, ver o catálogo de produtos, adicionar ao carrinho e "finalizar a compra". Também pode adicionar uma foto de perfil, editar seus dados pessoais e cadastrar um endereço.
 O usuário a nível de administrador ou funcionário pode registrar funcionários e produtos, criar categorias, ver tudo que já está registrado no Banco de Dados, editar ou excluir dados e gerar relatórios.
 
