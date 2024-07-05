@@ -6,4 +6,4 @@ RUN apt-get update \
 
 WORKDIR /var/www/html
 
-CMD ["php-fpm"]
+CMD ["php-fpm", "-S", "0.0.0.0:81", "./public/index.php"]
