@@ -62,7 +62,6 @@
                 <div class="card-body">
                   <!--<img src="public/imagens/cafes/cafe-gourmet-cerrado-mineiro.png" class="card-img-top" alt="Imagem do Produto">-->
                   <h5 class="card-title"><?php echo $produto->getNome(); ?></h5>
-                  <p class="card-text"><?php echo $produto->getDescricao(); ?></p>
                   <p class="card-text">Preço: R$ <?php echo $produto->getPreco(); ?></p>
                   <p class="card-text">Descrição: <?php echo $produto->getDescricao(); ?></p>
                   <div>
