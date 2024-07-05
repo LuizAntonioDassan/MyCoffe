@@ -35,7 +35,7 @@
 - Passo 4: Instalar ou verificar se o Docker está instalado e corretamente configurado no PC
 - Passo 5: Abrir o terminal e navegar até a pasta onde está o arquivo 'docker-compose.yaml' 
 - Passo 6: Executar o seguinte comando: 'docker-compose up --build -d'
-- Passo 7: Copie e cole no navegador a seguinte URL: 'http://localhost:8080'. Se não funcionar, por favor, tente a URL 'http://localhost:81'. A aplicação abrirá no navegador e poderá ser usada tranquilamente.
+- Passo 7: Copie e cole no navegador a seguinte URL: 'http://localhost:81'. A aplicação abrirá e poderá ser usada tranquilamente.
 
 7. Login como ADMINISTRADOR:
 - [ E-MAIL DE ADMINISTRADOR ]
