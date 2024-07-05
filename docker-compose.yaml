@@ -15,3 +15,5 @@ services:
       context: ./dockerfiles/php
     volumes:
       - .:/var/www/html
+    expose:
+      - "9000"
